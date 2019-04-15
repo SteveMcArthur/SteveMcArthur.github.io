@@ -111,3 +111,10 @@
 .background svg.sqlserver {
   fill: #A91D22;
 }
+@media all and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+  .background.programming .svg1 {
+    top: -32px;
+    right: -32px;
+    width: 128px;
+  }
+}
