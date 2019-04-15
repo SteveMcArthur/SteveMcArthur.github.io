@@ -1,6 +1,5 @@
 body {
   font-family: Poppins, sans-serif;
-  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -14,7 +13,6 @@ h5 {
 }
 .btn {
   font-size: 1rem;
-  line-height: 25px;
   font-weight: 600;
 }
 .navbar-brand {
@@ -31,7 +29,7 @@ h5 {
   font-family: Audiowide, sans-serif;
 }
 .intro-cont p {
-  font-size: 17px;
+  font-size: 1.06rem;
 }
 .portfolio-item .text-content {
   font-size: 0.89rem;
@@ -72,7 +70,7 @@ h5 {
   }
 }
 .readmore {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 .pagination {

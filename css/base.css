@@ -18,7 +18,7 @@ h3,
 h4,
 h5 {
   color: #000;
-  margin: 25px 0;
+  margin: 1.56rem 0;
 }
 h1 a,
 h2 a,
@@ -42,7 +42,7 @@ h6 a:hover {
   color: #000;
 }
 .btn {
-  padding: 13px 42px;
+  padding: 0.81rem 2.625rem;
   border-radius: 0;
 }
 .btn-outline-dark {
@@ -58,8 +58,8 @@ h6 a:hover {
   z-index: 6;
   background: #fff;
   position: relative;
-  margin-bottom: 160px;
-  padding-bottom: 30px;
+  margin-bottom: 10rem;
+  padding-bottom: 1.875rem;
   overflow: hidden;
 }
 @media (min-width: 768px) {
@@ -72,9 +72,9 @@ h6 a:hover {
 }
 #back-to-top {
   position: fixed;
-  width: 41px;
-  right: 25px;
-  bottom: 25px;
+  width: 2.56rem;
+  right: 1.56rem;
+  bottom: 1.56rem;
   margin: 0;
   z-index: 10000;
   opacity: 0;
@@ -90,10 +90,10 @@ h6 a:hover {
 #back-to-top > span {
   position: relative;
   display: block;
-  width: 39px;
-  height: 39px;
-  line-height: 40px;
-  font-size: 15px;
+  width: 2.43rem;
+  height: 2.43rem;
+  line-height: 2.5rem;
+  font-size: 1rem;
   text-align: center;
   color: #fff;
   background-color: #000;
