@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ok - you&amp;#39;ve made a change to your URL settings in your Wordpress dashboard and you go to test your new URL and find that your site is now unavailable with the browser giving you the message that there are &amp;quot;too many redirects&amp;quot;. Of course, now that the site is ...">
+    <meta name="keywords" content="Steve McArthur, Stephen McArthur, web developer, web designer">
+    <meta name="author" content="Steve McArthur">
+    <title>Wordpress Redirect Loop After Changing URL | Steve McArthur</title>
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:title" content="Wordpress Redirect Loop After Changing URL | Steve McArthur">
+    <meta name="twitter:description" content="Ok - you&amp;#39;ve made a change to your URL settings in your Wordpress dashboard and you go to test your new URL and find that your site is now unavailable with the browser giving you the message that t...">
+    <meta name="twitter:image" content="https://www.stevemcarthur.co.uk/img/noooo.jpg">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Wordpress Redirect Loop After Changing URL | Steve McArthur">
+    <meta property="og:url" content="https://www.stevemcarthur.co.uk/blog/post/wordpress-redirect-loop-after-changing-url">
+    <meta property="og:image" content="https://www.stevemcarthur.co.uk/img/noooo.jpg">
+    <meta property="og:description" content="Ok - you&amp;#39;ve made a change to your URL settings in your Wordpress dashboard and you go to test your new URL and find that your site is now unavailable with the browser giving you the message that there are &amp;quot;too many redirects&amp;quot;. Of course, now that the site is ...">
+
+    <!--icons-->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#fff">
+    
+    <link href="https://fonts.googleapis.com/css?family&#x3D;Poppins:300,300i,400,400i,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family&#x3D;Audiowide" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet">
+    <link href="/css/typography.css" rel="stylesheet">
+    <link href="/css/socials.css" rel="stylesheet">
+    <link href="/css/navbar.css" rel="stylesheet">
+    <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/page.css" rel="stylesheet">
+    <link href="/css/footer.css" rel="stylesheet">
+    <link href="/css/home.css" rel="stylesheet">
+    <link href="/css/svg-overlays.css" rel="stylesheet">
+    <link href="/css/post-img.css" rel="stylesheet">
+    <link href="/css/post.css" rel="stylesheet">
+    <link href="/css/svg-backgrounds.css" rel="stylesheet">
+    <link href="/font-awesome/css/all.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+        "palette": {
+        "popup": {
+        "background": "#32949D"
+        },
+        "button": {
+        "background": "#65c7d0"
+        }
+    },
+    "content": {
+        "href": "/privacy-policy/"
+    }
+    })});
+</script>
+</head>
+          <body>  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Steve McArthur</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                  <a class="nav-link" href="/">Home          <hr>
+          </a>
+          
+        </li>
+                       <li class="nav-item">
+                  <a class="nav-link" href="/about">About          <hr>
+          </a>
+          
+        </li>
+                       <li class="nav-item">
+                  <a class="nav-link" href="/blog">Blog          <hr>
+          </a>
+          
+        </li>
+                       <li class="nav-item">
+                  <a class="nav-link" href="/contact">Contact          <hr>
+          </a>
+          
+        </li>
+              <li class="nav-item sc">
+          <a class="nav-link"  href="https://twitter.com/stevemcarthur" title="Go to my Twitter account" aria-label="Go to my Twitter account">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item sc">
+          <a class="nav-link" href="https://github.com/SteveMcArthur" title="Go to my Github account" aria-label="Go to my Twitter account">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="nav-item sc">
+          <a class="nav-link" href="https://stevemcarthur.slack.com" title="Visit me on Slack" aria-label="Visit me on Slack">
+            <i class="fab fa-slack"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>  <div class="page-content">
+    <header class="page-header">
+     <div class="container">
+        <div class="row">
+            <div class="col-12">
+                                    <div class="post-heading">
+                                    
+                        <h1>Wordpress Redirect Loop After Changing URL</h1>
+                                                                        <ul class="post-meta list-inline">
+					        <li class="list-inline-item"><span class="byline"><span class="author vcard"><i class="fa fa-user"></i><span class="screen-reader-text">Written by </span>Steve McArthur</span></span></li>
+                                                        <li class="list-inline-item"><span class="byline"><i class="far fa-clock"></i>November 9, 2016</span>
+                                                        <li class="list-inline-item"><span class="cat-links"><a href="#" rel="category tag">wordpress</a></span></li>
+				        </ul>
+                                            </div>
+      
+            </div> 
+        </div> 
+    </div> 
+</header>    <!-- Post Content -->
+  <article class="post">
+      <div class="container">
+          <div class="row">
+            <div class="col-12">
+            <div class="post-img">
+                <img class="img-fluid" src="/img/noooo.jpg" alt="Noooo">
+            </div>
+            <div class="post-holder">
+              <div class="post-content blog-post">
+                  <p>Ok - you&#39;ve made a change to your URL settings in your Wordpress dashboard and you go to test your new URL and find that your site is now unavailable with the browser giving you the message that there are &quot;too many redirects&quot;. Of course, now that the site is unavailable you are unable to log into your Wordpress admin and change the URL back. Panic sets in.</p>
+<p>I&#39;ve actually done this quite a few times. In this situation, the only option you have is to connect to the database directly and change the URL values in the MySQL table. Not as scary as it first sounds. The admin page settings for your Wordpress URLs map directly on to the &quot;options&quot; table in your Wordpress database. So you need to get access to the Wordpress database. If your site is hosted by a third party, chances are that this will be via <a href="https://www.phpmyadmin.net/">phpMyAdmin</a>. If it is locally hosted, you can probably still use phpMyAdmin, but likely you will have some other MySQL database management application such as MySQL workbench. In any case, log in to MySQL. Find your Wordpress database and find the &quot;~_options&quot; table - where the &quot;~&quot; represents a prefix (often &quot;wp&quot;) that was chosen at installation time.</p>
+<p>Once &quot;~_options&quot; table is found look for the records with the option_name &quot;siteurl&quot; and &quot;home&quot;. They will often be the first two records in the table. The &quot;option_value&quot; is what you want to change and you will almost certainly recognise the values in those fields. Change these values to what you want. In phpMyAdmin, just double click in the field and edit the value. And that&#39;s it. Done. You might need to refresh your browser or clear its cache, but the change will be available straight away.</p>
+              </div>
+              </div>
+            </div>
+          </div>
+                    <!-- Comments -->
+          <div class="row">
+              <div class="col-12">
+                  <div id="comments" class="clearfix">
+                      <div id="disqus_thread"></div>
+    <script>
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'stevemcarthur'; // required: replace example with your forum shortname
+      var disqus_identifier = 'wordpress-redirect-loop-after-changing-url';
+      var disqus_title = 'Wordpress Redirect Loop After Changing URL';
+      var disqus_url = 'https://www.stevemcarthur.co.uk/blog/post/wordpress-redirect-loop-after-changing-url';
+
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+
+
+                  </div>
+              </div>
+          </div>
+          <!-- #comments end -->
+                </div>
+  </article>  </div>
+  <!-- Footer -->
+<footer class="py-3 bg-dark navbar-dark fixed-bottom">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-12 mx-auto">
+                <a class="navbar-brand" href="/">Steve McArthur</a>
+                <div class="share2">
+                    <div class="share-cont">
+    <div class="socials">
+        <a class="facebook" href="javascript:void(0)"  
+            onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fwordpress-redirect-loop-after-changing-url', 'facebook-share', 'width=580,height=296');return false;"
+            title="Share on Facebook" aria-label="Share on Facebook" >
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="twitter" href="javascript:void(0)"  
+            onClick="window.open('https://twitter.com/intent/tweet?text=Ok%20-%20you%26%2339%3Bve%20made%20a%20change%20to%20your%20URL%20settings%20in%20your%20Wordpress%20dashboard%20and%20you%20go%20to%20test%20your%20new%20URL%20and%20find%20that%20your%20site%20is%20now%20unavailable%20with%20the%20browser%20giving%20you%20the%20message%20that%20there%20are%20%26quot%3Btoo%20many%20redirects%26quot%3B.%20Of%20course%2C%20now%20that%20the%20site%20is%20...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fwordpress-redirect-loop-after-changing-url', 'twitter-share', 'width=550,height=235');return false;" 
+            title="Share on Twitter" target="_blank" aria-label="Share on Twitter">
+        <i class="fab fa-twitter"></i>
+        </a>
+        <a class="google-plus" href="javascript:void(0)"  
+            onClick="window.open('https://plus.google.com/share?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fwordpress-redirect-loop-after-changing-url', 'google-plus-share', 'width=490,height=530');return false;"
+            title="Share on Google+" target="_blank" aria-label="Share on Google+">
+        <i class="fab fa-google"></i>
+        </a>
+        <a class="pinterest" href="javascript:void(0)"  
+            onClick="window.open('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fwordpress-redirect-loop-after-changing-url&#38;media=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fimg%2Fnoooo.jpg', 'pinterest-share', 'width=490,height=530');return false;"
+            title="Share on Pinterest" target="_blank" aria-label="Share on Pinterest">
+        <i class="fab fa-pinterest"></i>
+        </a>
+    </div>
+</div>                                   </div>
+                <div class="m-0 sm">
+                <span class="copyright">Copyright &copy; Steve McArthur 2019</span><span> <a class="tc" href="/terms-and-conditions/">Terms and Conditions</a> </span><span><a href="/privacy-policy/">Privacy</a></span>             
+                </div>
+
+                   
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</footer>  <div class="sidebar container">
+  <div class="share-cont">
+    <div class="socials">
+        <a class="facebook" href="javascript:void(0)"  
+            onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fwordpress-redirect-loop-after-changing-url', 'facebook-share', 'width=580,height=296');return false;"
+            title="Share on Facebook" aria-label="Share on Facebook" >
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="twitter" href="javascript:void(0)"  
+            onClick="window.open('https://twitter.com/intent/tweet?text=Ok%20-%20you%26%2339%3Bve%20made%20a%20change%20to%20your%20URL%20settings%20in%20your%20Wordpress%20dashboard%20and%20you%20go%20to%20test%20your%20new%20URL%20and%20find%20that%20your%20site%20is%20now%20unavailable%20with%20the%20browser%20giving%20you%20the%20message%20that%20there%20are%20%26quot%3Btoo%20many%20redirects%26quot%3B.%20Of%20course%2C%20now%20that%20the%20site%20is%20...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fwordpress-redirect-loop-after-changing-url', 'twitter-share', 'width=550,height=235');return false;" 
+            title="Share on Twitter" target="_blank" aria-label="Share on Twitter">
+        <i class="fab fa-twitter"></i>
+        </a>
+        <a class="google-plus" href="javascript:void(0)"  
+            onClick="window.open('https://plus.google.com/share?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fwordpress-redirect-loop-after-changing-url', 'google-plus-share', 'width=490,height=530');return false;"
+            title="Share on Google+" target="_blank" aria-label="Share on Google+">
+        <i class="fab fa-google"></i>
+        </a>
+        <a class="pinterest" href="javascript:void(0)"  
+            onClick="window.open('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fwordpress-redirect-loop-after-changing-url&#38;media=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fimg%2Fnoooo.jpg', 'pinterest-share', 'width=490,height=530');return false;"
+            title="Share on Pinterest" target="_blank" aria-label="Share on Pinterest">
+        <i class="fab fa-pinterest"></i>
+        </a>
+    </div>
+</div>                    </div>
+  <a id="back-to-top" href="#" class="">
+    <span>
+      <i class="fa fa-angle-up "></i>
+    </span>
+  </a>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/scripts.js"></script>
+
+  </body>
+
+</html>
+
+

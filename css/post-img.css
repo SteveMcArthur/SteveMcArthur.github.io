@@ -1,0 +1,14 @@
+.post-img {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+}
+.post-img img {
+  width: 100%;
+}
+@media only screen and (min-width: 992px) {
+  /*     .post-img {
+        top: 50px;
+        height: 360px;
+    } */
+}

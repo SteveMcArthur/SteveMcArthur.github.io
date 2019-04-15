@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="I got the extremely helpful &amp;quot;Some kind of disk I/O error occurred&amp;quot; message using the System.Data.SQLite .net assembly today. This was a big SQLite show stopper. So I thought it was about time I figured out what was causing this. The error was occurring when I tried to post an ...">
+    <meta name="keywords" content="sqlite,.net">
+    <meta name="author" content="Steve McArthur">
+    <title>Some kind of disk I/O error occurred - SQLite | Steve McArthur</title>
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:title" content="Some kind of disk I/O error occurred - SQLite | Steve McArthur">
+    <meta name="twitter:description" content="I got the extremely helpful &amp;quot;Some kind of disk I/O error occurred&amp;quot; message using the System.Data.SQLite .net assembly today. This was a big SQLite show stopper. So I thought it was about tim...">
+    <meta name="twitter:image" content="https://www.stevemcarthur.co.uk/img/SQLite2.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Some kind of disk I/O error occurred - SQLite | Steve McArthur">
+    <meta property="og:url" content="https://www.stevemcarthur.co.uk/blog/post/some-kind-of-disk-io-error-occurred-sqlite">
+    <meta property="og:image" content="https://www.stevemcarthur.co.uk/img/SQLite2.png">
+    <meta property="og:description" content="I got the extremely helpful &amp;quot;Some kind of disk I/O error occurred&amp;quot; message using the System.Data.SQLite .net assembly today. This was a big SQLite show stopper. So I thought it was about time I figured out what was causing this. The error was occurring when I tried to post an ...">
+
+    <!--icons-->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#fff">
+    
+    <link href="https://fonts.googleapis.com/css?family&#x3D;Poppins:300,300i,400,400i,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family&#x3D;Audiowide" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet">
+    <link href="/css/typography.css" rel="stylesheet">
+    <link href="/css/socials.css" rel="stylesheet">
+    <link href="/css/navbar.css" rel="stylesheet">
+    <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/page.css" rel="stylesheet">
+    <link href="/css/footer.css" rel="stylesheet">
+    <link href="/css/home.css" rel="stylesheet">
+    <link href="/css/svg-overlays.css" rel="stylesheet">
+    <link href="/css/post-img.css" rel="stylesheet">
+    <link href="/css/post.css" rel="stylesheet">
+    <link href="/css/svg-backgrounds.css" rel="stylesheet">
+    <link href="/font-awesome/css/all.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+        "palette": {
+        "popup": {
+        "background": "#32949D"
+        },
+        "button": {
+        "background": "#65c7d0"
+        }
+    },
+    "content": {
+        "href": "/privacy-policy/"
+    }
+    })});
+</script>
+</head>
+          <body>  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Steve McArthur</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                  <a class="nav-link" href="/">Home          <hr>
+          </a>
+          
+        </li>
+                       <li class="nav-item">
+                  <a class="nav-link" href="/about">About          <hr>
+          </a>
+          
+        </li>
+                       <li class="nav-item">
+                  <a class="nav-link" href="/blog">Blog          <hr>
+          </a>
+          
+        </li>
+                       <li class="nav-item">
+                  <a class="nav-link" href="/contact">Contact          <hr>
+          </a>
+          
+        </li>
+              <li class="nav-item sc">
+          <a class="nav-link"  href="https://twitter.com/stevemcarthur" title="Go to my Twitter account" aria-label="Go to my Twitter account">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item sc">
+          <a class="nav-link" href="https://github.com/SteveMcArthur" title="Go to my Github account" aria-label="Go to my Twitter account">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="nav-item sc">
+          <a class="nav-link" href="https://stevemcarthur.slack.com" title="Visit me on Slack" aria-label="Visit me on Slack">
+            <i class="fab fa-slack"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>  <div class="page-content">
+    <header class="page-header">
+     <div class="container">
+        <div class="row">
+            <div class="col-12">
+                                    <div class="post-heading">
+                                    
+                        <h1>Some kind of disk I/O error occurred - SQLite</h1>
+                                                                        <ul class="post-meta list-inline">
+					        <li class="list-inline-item"><span class="byline"><span class="author vcard"><i class="fa fa-user"></i><span class="screen-reader-text">Written by </span>Steve McArthur</span></span></li>
+                                                        <li class="list-inline-item"><span class="byline"><i class="far fa-clock"></i>December 14, 2010</span>
+                                                        <li class="list-inline-item"><span class="cat-links"><a href="#" rel="category tag">sqlite</a></span></li>
+				        </ul>
+                                            </div>
+      
+            </div> 
+        </div> 
+    </div> 
+</header>    <!-- Post Content -->
+  <article class="post">
+      <div class="container">
+          <div class="row">
+            <div class="col-12">
+            <div class="post-img">
+                <img class="img-fluid" src="/img/SQLite2.png" alt="SQLite2">
+            </div>
+            <div class="post-holder">
+              <div class="post-content blog-post">
+                  <p>I got the extremely helpful &quot;Some kind of disk I/O error occurred&quot; message using the System.Data.SQLite .net assembly today. This was a big SQLite show stopper. So I thought it was about time I figured out what was causing this. The error was occurring when I tried to post an update to the SQLite database in the local App_Data folder of an asp.net application. As soon as the application attempted to post the update I got the dreaded &quot;Some kind of..&quot; error and a SQLite journal file was created in the database folder. After this, the database became unavailable. It became available again once the journal file was deleted, but I was then back in the same situation once another update was attempted. The curious thing was that this behaviour didn&#39;t occur in the development environment, only when uploaded to the live server. My first thought was that the application for some reason didn&#39;t have rights to write to the App_Data folder. But the journal file was writing to the location with no troubles. Finally I hit upon a forum post on the System.Data.SQLite forum. This pointed in the direction of using the statement to set the journal_mode value to something other than &quot;DELETE&quot;. The PRAGMA statement is executed exactly like a query, so all that needs to be done is to execute the statement using a SQLiteCommand object in the same way you would execute any other SQL statement.</p>
+<pre data-type="code" class="js">using(SQLiteConnection conn = new SQLiteConnection(sqliteConnectionString)) {
+    conn.Open();
+    SQLiteCommand cmd = new SQLiteCommand();
+    cmd.Connection = conn;
+    string pragma = "PRAGMA journal_mode = OFF";
+    cmd.CommandText = pragma;
+    cmd.ExecuteNonQuery();
+}
+</pre>
+              </div>
+              </div>
+            </div>
+          </div>
+                    <!-- Comments -->
+          <div class="row">
+              <div class="col-12">
+                  <div id="comments" class="clearfix">
+                      <div id="disqus_thread"></div>
+    <script>
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'stevemcarthur'; // required: replace example with your forum shortname
+      var disqus_identifier = 'blog-post-some-kind-of-disk-io-error-occurred-sqlite';
+      var disqus_title = 'Some kind of disk I/O error occurred - SQLite';
+      var disqus_url = 'http://127.0.0.1:9778/blog/post/some-kind-of-disk-io-error-occurred-sqlite';
+
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+
+
+                  </div>
+              </div>
+          </div>
+          <!-- #comments end -->
+                </div>
+  </article>  </div>
+  <!-- Footer -->
+<footer class="py-3 bg-dark navbar-dark fixed-bottom">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-12 mx-auto">
+                <a class="navbar-brand" href="/">Steve McArthur</a>
+                <div class="share2">
+                    <div class="share-cont">
+    <div class="socials">
+        <a class="facebook" href="javascript:void(0)"  
+            onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fsome-kind-of-disk-io-error-occurred-sqlite', 'facebook-share', 'width=580,height=296');return false;"
+            title="Share on Facebook" aria-label="Share on Facebook" >
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="twitter" href="javascript:void(0)"  
+            onClick="window.open('https://twitter.com/intent/tweet?text=I%20got%20the%20extremely%20helpful%20%26quot%3BSome%20kind%20of%20disk%20I%2FO%20error%20occurred%26quot%3B%20message%20using%20the%20System.Data.SQLite%20.net%20assembly%20today.%20This%20was%20a%20big%20SQLite%20show%20stopper.%20So%20I%20thought%20it%20was%20about%20time%20I%20figured%20out%20what%20was%20causing%20this.%20The%20error%20was%20occurring%20when%20I%20tried%20to%20post%20an%20...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fsome-kind-of-disk-io-error-occurred-sqlite', 'twitter-share', 'width=550,height=235');return false;" 
+            title="Share on Twitter" target="_blank" aria-label="Share on Twitter">
+        <i class="fab fa-twitter"></i>
+        </a>
+        <a class="google-plus" href="javascript:void(0)"  
+            onClick="window.open('https://plus.google.com/share?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fsome-kind-of-disk-io-error-occurred-sqlite', 'google-plus-share', 'width=490,height=530');return false;"
+            title="Share on Google+" target="_blank" aria-label="Share on Google+">
+        <i class="fab fa-google"></i>
+        </a>
+        <a class="pinterest" href="javascript:void(0)"  
+            onClick="window.open('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fsome-kind-of-disk-io-error-occurred-sqlite&#38;media=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fimg%2FSQLite2.png', 'pinterest-share', 'width=490,height=530');return false;"
+            title="Share on Pinterest" target="_blank" aria-label="Share on Pinterest">
+        <i class="fab fa-pinterest"></i>
+        </a>
+    </div>
+</div>                                   </div>
+                <div class="m-0 sm">
+                <span class="copyright">Copyright &copy; Steve McArthur 2019</span><span> <a class="tc" href="/terms-and-conditions/">Terms and Conditions</a> </span><span><a href="/privacy-policy/">Privacy</a></span>             
+                </div>
+
+                   
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</footer>  <div class="sidebar container">
+  <div class="share-cont">
+    <div class="socials">
+        <a class="facebook" href="javascript:void(0)"  
+            onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fsome-kind-of-disk-io-error-occurred-sqlite', 'facebook-share', 'width=580,height=296');return false;"
+            title="Share on Facebook" aria-label="Share on Facebook" >
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="twitter" href="javascript:void(0)"  
+            onClick="window.open('https://twitter.com/intent/tweet?text=I%20got%20the%20extremely%20helpful%20%26quot%3BSome%20kind%20of%20disk%20I%2FO%20error%20occurred%26quot%3B%20message%20using%20the%20System.Data.SQLite%20.net%20assembly%20today.%20This%20was%20a%20big%20SQLite%20show%20stopper.%20So%20I%20thought%20it%20was%20about%20time%20I%20figured%20out%20what%20was%20causing%20this.%20The%20error%20was%20occurring%20when%20I%20tried%20to%20post%20an%20...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fsome-kind-of-disk-io-error-occurred-sqlite', 'twitter-share', 'width=550,height=235');return false;" 
+            title="Share on Twitter" target="_blank" aria-label="Share on Twitter">
+        <i class="fab fa-twitter"></i>
+        </a>
+        <a class="google-plus" href="javascript:void(0)"  
+            onClick="window.open('https://plus.google.com/share?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fsome-kind-of-disk-io-error-occurred-sqlite', 'google-plus-share', 'width=490,height=530');return false;"
+            title="Share on Google+" target="_blank" aria-label="Share on Google+">
+        <i class="fab fa-google"></i>
+        </a>
+        <a class="pinterest" href="javascript:void(0)"  
+            onClick="window.open('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fsome-kind-of-disk-io-error-occurred-sqlite&#38;media=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fimg%2FSQLite2.png', 'pinterest-share', 'width=490,height=530');return false;"
+            title="Share on Pinterest" target="_blank" aria-label="Share on Pinterest">
+        <i class="fab fa-pinterest"></i>
+        </a>
+    </div>
+</div>                    </div>
+  <a id="back-to-top" href="#" class="">
+    <span>
+      <i class="fa fa-angle-up "></i>
+    </span>
+  </a>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/scripts.js"></script>
+
+  </body>
+
+</html>
+
+

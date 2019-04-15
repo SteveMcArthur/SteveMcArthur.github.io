@@ -1,0 +1,65 @@
+.home .sidebar.container {
+  width: 100%;
+  max-width: none;
+}
+.sidebar .share-cont {
+  position: fixed;
+  top: 0;
+  /*     margin-left: 2rem;
+    margin-top: 2rem; */
+  width: 60px;
+  z-index: 99999999;
+  transform: translateY(150px);
+}
+footer .share-cont {
+  position: relative;
+}
+.socials {
+  overflow: hidden;
+  display: block;
+  background-color: transparent;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  color: #000;
+}
+.sidebar .socials {
+  display: none;
+}
+.home .sidebar .socials {
+  display: none;
+}
+@media (min-width: 768px) {
+  .home .sidebar .socials {
+    display: block;
+  }
+}
+.blog .sidebar .socials,
+.contact .sidebar .socials,
+.about .sidebar .socials {
+  display: none;
+}
+.socials a {
+  display: inline-block;
+  line-height: 32px;
+  width: 32px;
+  height: 32px;
+  color: #000;
+  text-align: center;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-size: 18px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.share2 .socials,
+.share2 .socials a {
+  color: #fff;
+  text-align: center;
+}
+.navbar .nav-item.sc:hover i,
+.socials a:hover {
+  color: #E91222;
+}

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="In a nutshell, Node.js installs on Windows in the same way that you install any other Windows program. Double click on the installation executable/program/msi - and that&amp;#39;s it. Go to the Node.js website and download the Node.js executable for your version of Windows. You will often see multiple versions available ...">
+    <meta name="keywords" content="Steve McArthur, Stephen McArthur, web developer, web designer">
+    <meta name="author" content="Steve McArthur">
+    <title>How to install Nodejs on Windows | Steve McArthur</title>
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:title" content="How to install Nodejs on Windows | Steve McArthur">
+    <meta name="twitter:description" content="In a nutshell, Node.js installs on Windows in the same way that you install any other Windows program. Double click on the installation executable/program/msi - and that&amp;#39;s it. Go to the Node.js we...">
+    <meta name="twitter:image" content="https://www.stevemcarthur.co.uk/img/nodejs.jpg">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="How to install Nodejs on Windows | Steve McArthur">
+    <meta property="og:url" content="https://www.stevemcarthur.co.uk/blog/post/how-to-install-nodejs">
+    <meta property="og:image" content="https://www.stevemcarthur.co.uk/img/nodejs.jpg">
+    <meta property="og:description" content="In a nutshell, Node.js installs on Windows in the same way that you install any other Windows program. Double click on the installation executable/program/msi - and that&amp;#39;s it. Go to the Node.js website and download the Node.js executable for your version of Windows. You will often see multiple versions available ...">
+
+    <!--icons-->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#fff">
+    
+    <link href="https://fonts.googleapis.com/css?family&#x3D;Poppins:300,300i,400,400i,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family&#x3D;Audiowide" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet">
+    <link href="/css/typography.css" rel="stylesheet">
+    <link href="/css/socials.css" rel="stylesheet">
+    <link href="/css/navbar.css" rel="stylesheet">
+    <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/page.css" rel="stylesheet">
+    <link href="/css/footer.css" rel="stylesheet">
+    <link href="/css/home.css" rel="stylesheet">
+    <link href="/css/svg-overlays.css" rel="stylesheet">
+    <link href="/css/post-img.css" rel="stylesheet">
+    <link href="/css/post.css" rel="stylesheet">
+    <link href="/css/svg-backgrounds.css" rel="stylesheet">
+    <link href="/font-awesome/css/all.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+        "palette": {
+        "popup": {
+        "background": "#32949D"
+        },
+        "button": {
+        "background": "#65c7d0"
+        }
+    },
+    "content": {
+        "href": "/privacy-policy/"
+    }
+    })});
+</script>
+</head>
+          <body>  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Steve McArthur</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                  <a class="nav-link" href="/">Home          <hr>
+          </a>
+          
+        </li>
+                       <li class="nav-item">
+                  <a class="nav-link" href="/about">About          <hr>
+          </a>
+          
+        </li>
+                       <li class="nav-item">
+                  <a class="nav-link" href="/blog">Blog          <hr>
+          </a>
+          
+        </li>
+                       <li class="nav-item">
+                  <a class="nav-link" href="/contact">Contact          <hr>
+          </a>
+          
+        </li>
+              <li class="nav-item sc">
+          <a class="nav-link"  href="https://twitter.com/stevemcarthur" title="Go to my Twitter account" aria-label="Go to my Twitter account">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item sc">
+          <a class="nav-link" href="https://github.com/SteveMcArthur" title="Go to my Github account" aria-label="Go to my Twitter account">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="nav-item sc">
+          <a class="nav-link" href="https://stevemcarthur.slack.com" title="Visit me on Slack" aria-label="Visit me on Slack">
+            <i class="fab fa-slack"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>  <div class="page-content">
+    <header class="page-header">
+     <div class="container">
+        <div class="row">
+            <div class="col-12">
+                                    <div class="post-heading">
+                                    
+                        <h1>How to install Nodejs on Windows</h1>
+                                                                        <ul class="post-meta list-inline">
+					        <li class="list-inline-item"><span class="byline"><span class="author vcard"><i class="fa fa-user"></i><span class="screen-reader-text">Written by </span>Steve McArthur</span></span></li>
+                                                        <li class="list-inline-item"><span class="byline"><i class="far fa-clock"></i>October 23, 2015</span>
+                                                        <li class="list-inline-item"><span class="cat-links"><a href="#" rel="category tag">node.js</a></span></li>
+				        </ul>
+                                            </div>
+      
+            </div> 
+        </div> 
+    </div> 
+</header>    <!-- Post Content -->
+  <article class="post">
+      <div class="container">
+          <div class="row">
+            <div class="col-12">
+            <div class="post-img">
+                <img class="img-fluid" src="/img/nodejs.jpg" alt="Nodejs">
+            </div>
+            <div class="post-holder">
+              <div class="post-content blog-post">
+                  <p>In a nutshell, Node.js installs on Windows in the same way that you install any other Windows program. Double click on the installation executable/program/msi - and that&#39;s it.</p>
+<ol>
+<li>Go to the <a href="https://nodejs.org">Node.js</a> website and download the Node.js executable for your version of Windows. You will often see multiple versions available to download. Go for the &quot;LTS&quot; (Long Term Support) version.</li>
+</ol>
+<p><img src="/img/nodejs-download-page.jpg" alt="Node.js download page"></p>
+<ol start="2">
+<li><p>Your browser will prompt you to select a location on your computer to download the &quot;.msi&quot; installer. Put it anywhere convenient.</p>
+</li>
+<li><p>Once downloaded, double click on the file and you will be guided through the installation process.</p>
+</li>
+<li><p>When the installation process is completed you can test the installation by opening the command prompt and typing &quot;node -v&quot;. This effectively does two things, tells you Node has been installed and is available through the command &quot;node&quot; and what version has been installed.</p>
+</li>
+</ol>
+<p><img src="/img/nodejs-cmd-prompt.jpg" alt="Node.js command prompt"></p>
+              </div>
+              </div>
+            </div>
+          </div>
+                    <!-- Comments -->
+          <div class="row">
+              <div class="col-12">
+                  <div id="comments" class="clearfix">
+                      <div id="disqus_thread"></div>
+    <script>
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'stevemcarthur'; // required: replace example with your forum shortname
+      var disqus_identifier = 'how-to-install-nodejs';
+      var disqus_title = 'How to install Nodejs on Windows';
+      var disqus_url = 'https://www.stevemcarthur.co.uk/blog/post/how-to-install-nodejs';
+
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+
+
+                  </div>
+              </div>
+          </div>
+          <!-- #comments end -->
+                </div>
+  </article>  </div>
+  <!-- Footer -->
+<footer class="py-3 bg-dark navbar-dark fixed-bottom">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-12 mx-auto">
+                <a class="navbar-brand" href="/">Steve McArthur</a>
+                <div class="share2">
+                    <div class="share-cont">
+    <div class="socials">
+        <a class="facebook" href="javascript:void(0)"  
+            onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fhow-to-install-nodejs', 'facebook-share', 'width=580,height=296');return false;"
+            title="Share on Facebook" aria-label="Share on Facebook" >
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="twitter" href="javascript:void(0)"  
+            onClick="window.open('https://twitter.com/intent/tweet?text=In%20a%20nutshell%2C%20Node.js%20installs%20on%20Windows%20in%20the%20same%20way%20that%20you%20install%20any%20other%20Windows%20program.%20Double%20click%20on%20the%20installation%20executable%2Fprogram%2Fmsi%20-%20and%20that%26%2339%3Bs%20it.%20Go%20to%20the%20Node.js%20website%20and%20download%20the%20Node.js%20executable%20for%20your%20version%20of%20Windows.%20You%20will%20often%20see%20multiple%20versions%20available%20...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fhow-to-install-nodejs', 'twitter-share', 'width=550,height=235');return false;" 
+            title="Share on Twitter" target="_blank" aria-label="Share on Twitter">
+        <i class="fab fa-twitter"></i>
+        </a>
+        <a class="google-plus" href="javascript:void(0)"  
+            onClick="window.open('https://plus.google.com/share?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fhow-to-install-nodejs', 'google-plus-share', 'width=490,height=530');return false;"
+            title="Share on Google+" target="_blank" aria-label="Share on Google+">
+        <i class="fab fa-google"></i>
+        </a>
+        <a class="pinterest" href="javascript:void(0)"  
+            onClick="window.open('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fhow-to-install-nodejs&#38;media=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fimg%2Fnodejs.jpg', 'pinterest-share', 'width=490,height=530');return false;"
+            title="Share on Pinterest" target="_blank" aria-label="Share on Pinterest">
+        <i class="fab fa-pinterest"></i>
+        </a>
+    </div>
+</div>                                   </div>
+                <div class="m-0 sm">
+                <span class="copyright">Copyright &copy; Steve McArthur 2019</span><span> <a class="tc" href="/terms-and-conditions/">Terms and Conditions</a> </span><span><a href="/privacy-policy/">Privacy</a></span>             
+                </div>
+
+                   
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</footer>  <div class="sidebar container">
+  <div class="share-cont">
+    <div class="socials">
+        <a class="facebook" href="javascript:void(0)"  
+            onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fhow-to-install-nodejs', 'facebook-share', 'width=580,height=296');return false;"
+            title="Share on Facebook" aria-label="Share on Facebook" >
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="twitter" href="javascript:void(0)"  
+            onClick="window.open('https://twitter.com/intent/tweet?text=In%20a%20nutshell%2C%20Node.js%20installs%20on%20Windows%20in%20the%20same%20way%20that%20you%20install%20any%20other%20Windows%20program.%20Double%20click%20on%20the%20installation%20executable%2Fprogram%2Fmsi%20-%20and%20that%26%2339%3Bs%20it.%20Go%20to%20the%20Node.js%20website%20and%20download%20the%20Node.js%20executable%20for%20your%20version%20of%20Windows.%20You%20will%20often%20see%20multiple%20versions%20available%20...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fhow-to-install-nodejs', 'twitter-share', 'width=550,height=235');return false;" 
+            title="Share on Twitter" target="_blank" aria-label="Share on Twitter">
+        <i class="fab fa-twitter"></i>
+        </a>
+        <a class="google-plus" href="javascript:void(0)"  
+            onClick="window.open('https://plus.google.com/share?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fhow-to-install-nodejs', 'google-plus-share', 'width=490,height=530');return false;"
+            title="Share on Google+" target="_blank" aria-label="Share on Google+">
+        <i class="fab fa-google"></i>
+        </a>
+        <a class="pinterest" href="javascript:void(0)"  
+            onClick="window.open('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fhow-to-install-nodejs&#38;media=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fimg%2Fnodejs.jpg', 'pinterest-share', 'width=490,height=530');return false;"
+            title="Share on Pinterest" target="_blank" aria-label="Share on Pinterest">
+        <i class="fab fa-pinterest"></i>
+        </a>
+    </div>
+</div>                    </div>
+  <a id="back-to-top" href="#" class="">
+    <span>
+      <i class="fa fa-angle-up "></i>
+    </span>
+  </a>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/scripts.js"></script>
+
+  </body>
+
+</html>
+
+

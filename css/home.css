@@ -1,0 +1,208 @@
+.home-holder {
+  position: relative;
+  z-index: 6;
+}
+.section-header {
+  width: 100%;
+  text-align: center;
+}
+.section-header h2 {
+  background-color: #fff;
+  padding: 10px 20px;
+  display: inline;
+}
+.portfolio [class^="col-"] {
+  padding: 0;
+}
+.portfolio figure {
+  width: 100%;
+  margin: 0;
+}
+.portfolio figure img {
+  height: auto;
+  max-width: 100%;
+}
+.features {
+  text-align: center;
+}
+.text-holder {
+  background: #fff;
+  padding: 20px;
+  z-index: 800;
+  position: relative;
+  margin: -100px auto 0;
+  width: 95%;
+}
+.text-holder .content {
+  padding-bottom: 10px;
+}
+.text-holder .btn-container {
+  width: 100%;
+  text-align: center;
+}
+.section-left,
+.section-right {
+  margin: 0 auto;
+  width: 95%;
+  padding-top: 20px;
+}
+.section-right .text-holder {
+  margin-top: 200px;
+}
+.section-right figure {
+  margin-top: -500px;
+}
+.section-left figure,
+.section-right figure {
+  z-index: 0;
+}
+.section-left figure,
+.section-right figure {
+  width: 100%;
+}
+.section-left img,
+.section-right img {
+  height: 100%;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .section-left,
+  .section-right {
+    width: 100%;
+  }
+  .section-left {
+    padding-bottom: 50px;
+  }
+  .section-left .text-holder {
+    margin-left: -30vw;
+    float: right;
+    width: 40vw;
+  }
+  .section-right .text-holder {
+    margin-right: -30vw;
+    float: left;
+    width: 40vw;
+  }
+  .section-left .text-holder {
+    margin-top: 200px;
+  }
+  .section-right figure {
+    margin-top: 0;
+  }
+}
+.portfolio-item,
+.feature-item {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.text-overlay {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  box-sizing: border-box;
+  opacity: 0;
+  background-color: #000;
+  color: #fff;
+  -webkit-transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+  -moz-transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+  transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+}
+.text-overlay h4,
+.text-overlay .text-content {
+  color: #fff;
+}
+.text-wrapper {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+}
+.text-wrapper .btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -95px;
+}
+.portfolio .portfolio-item:hover .text-overlay {
+  opacity: 0.9;
+  -webkit-transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.features h4 {
+  margin: 20px 0;
+}
+.feature-item {
+  padding-bottom: 50px;
+}
+@media (min-width: 768px) {
+  .features h4 {
+    height: 56px;
+  }
+}
+.features figure {
+  position: relative;
+  width: 100%;
+  height: 53px;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.features figure img {
+  opacity: 1;
+  width: auto;
+  height: 53px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.features figure svg {
+  width: 53px;
+  height: 53px;
+  stroke: #000;
+  stroke-width: 0.5;
+}
+.features figure i {
+  font-size: 40px;
+  /*     -webkit-transition: transform .3s cubic-bezier(.25, .46, .45, .94) .1s;
+    -moz-transition: transform .3s cubic-bezier(.25, .46, .45, .94) .1s;
+    transition: transform .3s cubic-bezier(.25, .46, .45, .94) .1s; */
+}
+.features figure i:hover {
+  transform: rotate(45deg);
+  color: #666;
+  /*     -webkit-transition: transform .3s cubic-bezier(.25, .46, .45, .94) .1s;
+    -moz-transition: transform .3s cubic-bezier(.25, .46, .45, .94) .1s;
+    transition: transform .3s cubic-bezier(.25, .46, .45, .94) .1s; */
+}
+.features figure img:nth-child(2) {
+  opacity: 0;
+}
+.features figure:hover img:first-child {
+  opacity: 0;
+}
+.features figure:hover img:nth-child(2) {
+  opacity: 1;
+}
+.red {
+  color: #E2413E;
+}
+.yellow {
+  color: #F7E041;
+}
+.blue {
+  color: #1488C8;
+}
+@media (min-width: 1200px) {
+  .home .container {
+    max-width: 1100px;
+  }
+}

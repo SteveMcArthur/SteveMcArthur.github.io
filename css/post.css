@@ -1,0 +1,43 @@
+.post-heading {
+  color: #000;
+  text-align: left;
+  z-index: 7;
+}
+.post-heading h1 {
+  color: #000;
+}
+.post-heading .subheading,
+.post-heading .meta {
+  line-height: 1.1;
+  display: block;
+}
+.post-heading .subheading {
+  color: #000;
+  margin: 10px 0 30px;
+}
+.post-heading .meta a {
+  color: white;
+}
+.post-meta li {
+  position: relative;
+  padding: 3px 8px;
+  background: none;
+  color: #888;
+}
+.post-meta li::after {
+  content: '|';
+  position: absolute;
+  top: 3px;
+  right: -5px;
+  color: #888;
+}
+.post-meta li:last-of-type::after {
+  content: "";
+}
+.post-meta li a {
+  color: #888;
+}
+.meta i,
+.post-meta i {
+  margin-right: 5px;
+}

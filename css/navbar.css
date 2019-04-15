@@ -1,0 +1,60 @@
+.navbar {
+  /*     height: 100px; */
+  font-weight: 500;
+  margin-bottom: -100px;
+  z-index: 25;
+  transition: background-color 0.5s ease;
+}
+.navbar.fixed-top {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  /*     background-color: #fff !important; */
+}
+.navbar-collapse {
+  background-color: transparent;
+}
+.navbar-collapse.show,
+.navbar-collapse.collapsing {
+  text-align: center;
+  background-color: #fff !important;
+  margin: 0 -1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.navbar-collapse.show .navbar-nav,
+.navbar-collapse.collapsing .navbar-nav {
+  width: 100px;
+  margin: auto;
+}
+/* .navbar {
+    background-color: #fff;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        background-color: transparent;
+    }
+} */
+.navbar a,
+.navbar a:hover {
+  color: #000;
+}
+.navbar.fixed-top a,
+.navbar.navbar.fixed-top a:hover,
+.home .navbar a,
+.home .navbar a:hover {
+  color: #000;
+}
+.navbar .nav-item hr {
+  width: 100%;
+  color: transparent;
+  margin: 0;
+  border-top: 2px solid transparent;
+}
+.navbar .nav-item.active hr,
+.navbar .nav-item a:hover hr {
+  border-top: 2px solid #000;
+}
+.navbar .nav-item.sc {
+  font-size: 24px;
+  margin-top: -5px;
+}

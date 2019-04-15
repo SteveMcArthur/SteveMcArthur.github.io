@@ -1,0 +1,83 @@
+body {
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+  font-family: Poppins, sans-serif;
+}
+.btn {
+  font-size: 1rem;
+  line-height: 25px;
+  font-weight: 600;
+}
+.navbar-brand {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: 1.70rem;
+}
+@media (min-width: 768px) {
+  .navbar-brand {
+    font-size: 1.75rem;
+  }
+}
+.navbar-brand span {
+  font-family: Audiowide, sans-serif;
+}
+.intro-cont p {
+  font-size: 17px;
+}
+.portfolio-item .text-content {
+  font-size: 0.89rem;
+}
+.post-title {
+  font-size: 1.25rem;
+}
+.post-heading h1 {
+  font-size: 1.75rem;
+}
+.meta {
+  font-family: Poppins, sans-serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.1;
+}
+.post-meta li {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+.post-heading .subheading {
+  font-family: Poppins, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+.post-content {
+  font-weight: 400;
+}
+@media only screen and (min-width: 768px) {
+  .post-heading h1 {
+    font-size: 2.75rem;
+  }
+  .post-heading .subheading {
+    font-size: 1.5rem;
+  }
+}
+.readmore {
+  font-size: 14px;
+  font-weight: 600;
+}
+.pagination {
+  font-size: 0.8rem;
+}
+.sm {
+  font-size: 0.8rem;
+}
