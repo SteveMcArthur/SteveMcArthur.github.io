@@ -19,6 +19,7 @@
   top: -10vw;
   right: -10vw;
   width: 40vw;
+  z-index: 2;
 }
 .background .svg1 svg {
   fill: #65c7d0;

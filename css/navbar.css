@@ -35,7 +35,12 @@
     }
 } */
 .navbar-brand img {
-  height: 50px;
+  height: 2.125rem;
+}
+@media (min-width: 768px) {
+  .navbar-brand img {
+    height: 3.125rem;
+  }
 }
 .navbar-brand span {
   display: none;

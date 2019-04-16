@@ -309,7 +309,12 @@ footer .share-cont {
     }
 } */
 .navbar-brand img {
-  height: 50px;
+  height: 2.125rem;
+}
+@media (min-width: 768px) {
+  .navbar-brand img {
+    height: 3.125rem;
+  }
 }
 .navbar-brand span {
   display: none;
@@ -775,7 +780,7 @@ footer.fixed-bottom {
 @media (min-width: 768px) {
   .graphic-container {
     width: 50vw;
-    height: 100vh;
+    height: 36rem;
     top: 0;
     left: 50%;
   }
@@ -873,6 +878,7 @@ footer.fixed-bottom {
   top: -10vw;
   right: -10vw;
   width: 40vw;
+  z-index: 2;
 }
 .background .svg1 svg {
   fill: #65c7d0;
