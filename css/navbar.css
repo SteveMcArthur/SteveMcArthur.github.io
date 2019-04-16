@@ -34,6 +34,12 @@
         background-color: transparent;
     }
 } */
+.navbar-brand img {
+  height: 50px;
+}
+.navbar-brand span {
+  display: none;
+}
 .navbar a,
 .navbar a:hover {
   color: #000;
