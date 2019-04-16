@@ -1,0 +1,163 @@
+/**
+ * prism.js vb theme for VB, VBA, JavaScript, CSS and HTML
+ * 
+ * @author Steve McArthur
+ */
+code.language-visual-basic,
+pre.language-visual-basic {
+  color: #000;
+  background: #f5f3fd;
+  text-shadow: none;
+  font-family: "Courier New", Courier, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 0.89em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+pre.language-visual-basic::-moz-selection,
+pre.language-visual-basic ::-moz-selection,
+code.language-visual-basic::-moz-selection,
+code.language-visual-basic::-moz-selection {
+  text-shadow: none;
+  background: #f5f3fd;
+}
+pre.language-visual-basic::selection,
+pre.language-visual-basic ::selection,
+code.language-visual-basic::selection,
+code.language-visual-basic ::selection {
+  text-shadow: none;
+  background: #fff;
+}
+@media print {
+  code.language-visual-basic,
+  pre.language-visual-basic {
+    text-shadow: none;
+  }
+}
+/* Code blocks */
+pre.language-visual-basic {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  padding-top: 1.5em;
+}
+:not(pre) > code.language-visual-basic,
+pre.language-visual-basic {
+  background: #f5f3fd;
+}
+/* Inline code */
+:not(pre) > code.language-visual-basic {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
+code.language-visual-basic .token.comment,
+pre.language-visual-basic .token.comment,
+code.language-visual-basic .token.prolog,
+pre.language-visual-basic .token.prolog,
+code.language-visual-basic .token.doctype,
+pre.language-visual-basic .token.doctype,
+code.language-visual-basic .token.cdata,
+pre.language-visual-basic .token.cdata {
+  color: #690;
+}
+code.language-visual-basic .token.punctuation,
+pre.language-visual-basic .token.punctuation {
+  color: #000;
+}
+code.language-visual-basic .namespace,
+pre.language-visual-basic .namespace {
+  opacity: .7;
+}
+code.language-visual-basic .token.property,
+pre.language-visual-basic .token.property,
+code.language-visual-basic .token.tag,
+pre.language-visual-basic .token.tag,
+code.language-visual-basic .token.boolean,
+pre.language-visual-basic .token.boolean,
+code.language-visual-basic .token.number,
+pre.language-visual-basic .token.number,
+code.language-visual-basic .token.constant,
+pre.language-visual-basic .token.constant,
+code.language-visual-basic .token.symbol,
+pre.language-visual-basic .token.symbol,
+code.language-visual-basic .token.deleted,
+pre.language-visual-basic .token.deleted {
+  color: #000;
+}
+code.language-visual-basic .token.selector,
+pre.language-visual-basic .token.selector,
+code.language-visual-basic .token.attr-name,
+pre.language-visual-basic .token.attr-name,
+code.language-visual-basic .token.string,
+pre.language-visual-basic .token.string,
+code.language-visual-basic .token.char,
+pre.language-visual-basic .token.char,
+code.language-visual-basic .token.builtin,
+pre.language-visual-basic .token.builtin,
+code.language-visual-basic .token.inserted,
+pre.language-visual-basic .token.inserted {
+  color: #000;
+}
+code.language-visual-basic .token.operator,
+pre.language-visual-basic .token.operator,
+code.language-visual-basic .token.entity,
+pre.language-visual-basic .token.entity,
+code.language-visual-basic .token.url,
+pre.language-visual-basic .token.url,
+code.language-visual-basic .language-css .token.string,
+pre.language-visual-basic .language-css .token.string,
+code.language-visual-basic .style .token.string,
+pre.language-visual-basic .style .token.string {
+  color: #000;
+  background: #f5f3fd;
+}
+code.language-visual-basic .token.atrule,
+pre.language-visual-basic .token.atrule,
+code.language-visual-basic .token.attr-value,
+pre.language-visual-basic .token.attr-value,
+code.language-visual-basic .token.keyword,
+pre.language-visual-basic .token.keyword {
+  color: #07a;
+}
+code.language-visual-basic .token.function,
+pre.language-visual-basic .token.function,
+code.language-visual-basic .token.class-name,
+pre.language-visual-basic .token.class-name {
+  color: #000;
+}
+code.language-visual-basic .token.regex,
+pre.language-visual-basic .token.regex,
+code.language-visual-basic .token.important,
+pre.language-visual-basic .token.important,
+code.language-visual-basic .token.variable,
+pre.language-visual-basic .token.variable {
+  color: #07a;
+}
+code.language-visual-basic .token.important,
+pre.language-visual-basic .token.important,
+code.language-visual-basic .token.bold,
+pre.language-visual-basic .token.bold {
+  font-weight: bold;
+}
+code.language-visual-basic .token.italic,
+pre.language-visual-basic .token.italic {
+  font-style: italic;
+}
+code.language-visual-basic .token.entity,
+pre.language-visual-basic .token.entity {
+  cursor: help;
+}
+pre.language-visual-basic {
+  /* border: 1px solid #c5c5c5 !important; */
+}

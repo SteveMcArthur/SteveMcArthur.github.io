@@ -44,6 +44,9 @@
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
     <link href="/font-awesome/css/all.css" rel="stylesheet">
+    <link href="/css/prism-vscode.css" rel="stylesheet">
+    <link href="/css/vb.css" rel="stylesheet">
+    <link href="/css/prism-headers.css" rel="stylesheet">
 
 
 </head>
@@ -129,7 +132,8 @@
             <div class="post-holder">
               <div class="post-content blog-post">
                   <p>I use asp.net PageMethods in conjunction with ExtJS almost on a daily basis. PageMethods are simply server side methods that are callable from client side script. However, Microsoft assumes that you will be using PageMethods in conjunction with its Ajax framework, in particular the ScriptManager control which creates a JavaScript proxy on the client side for the server side PageMethods. If you are using a JavaScript framework like ExtJS then you probably don&#39;t want to include the unnecessary clutter and page weight of the MS Ajax framework. Luckily PageMethods are callable like any other Ajax call. The trick is that it is expecting the name of the method as a forward slash parameter after the page name and the methods parameters as jsonData in the postdata. In ExtJS this translates as something like this:</p>
-<pre data-type="code" class="js">Ext.Ajax.request({
+<pre data-code="js"><code class="language-javascript">
+Ext.Ajax.request({
     url: 'Default.aspx/myMethod',
     method: 'POST',
     success: onReturn,
@@ -139,7 +143,7 @@
             'Content-Type': 'application/json; charset=utf-8'
         }
      });
-</pre>
+</code></pre>
 
 <p>Note the headers property. This is the final piece in the puzzle. If you forget this then asp.net will think you are asking for the page and return the page itself instead of calling the PageMethod and returning the result of the method call as a json object. A couple of other &#39;gotchas&#39; to watch out for is to make sure your web.config file has the configurations in it to allow PageMethods to be called from client script. Normally this is done for you when you create an Ajax enabled application, but if you&#39;re converting from a non-Ajax application it boils down to entries in the httpHandlers and httpModules sections. httpHandlers:</p>
 <pre data-type="code" class="js">     
@@ -264,6 +268,16 @@
   <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.bundle.min.js"></script>
   <script src="/js/scripts.js"></script>
+  
+  <script src="/js/prism/prism.js"></script>
+  <script src="/js/prism/prism-javascript.js"></script>
+  <script src="/js/prism/prism-json.js"></script>
+  <script src="/js/prism/prism-visual-basic.js"></script>
+  <script src="/js/prism/prism-markup.js"></script>
+  <script src="/js/prism/prism-markup-templating.js"></script>
+  <script src="/js/prism/prism-handlebars.js"></script>
+  <script src="/js/prism/prism-coffeescript.js"></script>
+  <script src="/js/prism/prism-csharp.js"></script>
   
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>

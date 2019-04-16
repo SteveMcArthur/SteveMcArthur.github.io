@@ -1,0 +1,77 @@
+pre[class*="language-"] {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+code[class*="language-"] {
+  font-size: 1rem;
+}
+blockquote {
+  margin: 0 0 1rem 0;
+  padding: 1.2rem;
+}
+pre {
+  position: relative;
+  line-height: 28px;
+  min-width: 100%;
+}
+pre[data-code="Filesystem"] .punctuation,
+pre[data-code="Filesystem"] .keyword {
+  display: none;
+}
+pre[data-code]::before {
+  font-size: 1.1rem;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  content: attr(data-code);
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #999;
+  padding: 0.5rem 1rem;
+}
+pre[data-code="VBA"]::before,
+.vba,
+.vb {
+  background: #07a;
+}
+pre[data-code="JSON"]::before,
+.json {
+  background: #fab1a0;
+}
+pre[data-code="Node.js"]::before,
+.nodejs {
+  background: #026e00;
+}
+pre[data-code="Markdown"]::before,
+.markdown {
+  background: #6c5ce7;
+}
+pre[data-code="Handlebars"]::before,
+.handlebars {
+  background: #e67e22;
+}
+pre[data-code="Filesystem"]::before,
+.filesystem {
+  background: #f39c12;
+}
+pre[data-code="C#"]::before,
+.csharp {
+  background: #9b59b6;
+}
+p code {
+  background: #eee;
+}
+/* p code {
+  background: #1E1E1E;
+  color: #D4D4D4;
+  padding: 2px 7px;
+} */
+blockquote,
+.source {
+  background-color: #eee;
+  border-left: 8px solid #ccc;
+}

@@ -1,0 +1,106 @@
+/**
+ * theme for JavaScript, CSS and HTML
+ * vscode Loosely based on the default vscode theme
+ * @author Steve McArthur
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #D4D4D4;
+  background: #1E1E1E;
+  text-shadow: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 0.89em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+  padding-top: 1.5em;
+}
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #1E1E1E;
+}
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6A9955;
+}
+.token.punctuation {
+  color: #f8f8f2;
+}
+.namespace {
+  opacity: .7;
+}
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #9cdcfe;
+}
+.token.boolean,
+.token.number {
+  color: #b5cea8;
+}
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #ce9178;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #ce9178;
+}
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+  color: #b5cea8;
+}
+.token.keyword {
+  color: #569cd6;
+}
+.token.regex,
+.token.important {
+  color: #646695;
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+.token.entity {
+  cursor: help;
+}
