@@ -403,6 +403,10 @@ footer .share-cont {
   margin: 0 0 50px;
   padding: 0;
 }
+.blog .post-details {
+  padding: 20px;
+  background-color: #fff;
+}
 .post-thumbnail {
   width: 100%;
   background-color: #F9E6E2;
