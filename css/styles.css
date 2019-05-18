@@ -154,7 +154,7 @@ h5 {
   }
 }
 .navbar-brand span {
-  font-family: Audiowide, sans-serif;
+  font-family: Raleway, sans-serif;
 }
 .intro-cont p {
   font-size: 1.06rem;
@@ -315,9 +315,6 @@ footer .share-cont {
   .navbar-brand img {
     height: 3.125rem;
   }
-}
-.navbar-brand span {
-  display: none;
 }
 .navbar a,
 .navbar a:hover {
@@ -1016,6 +1013,27 @@ footer.fixed-bottom {
 }
 .background svg.sqlserver {
   fill: #A91D22;
+}
+#m-path {
+  fill: #feef20;
+}
+#s-path {
+  fill: #E2413E;
+}
+.background .logo-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  padding-top: 8rem;
+}
+@media only screen and (min-width: 992px) {
+  .background .logo-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    padding-top: 8rem;
+    float: left;
+  }
 }
 @media all and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
   .background.programming .svg1 {

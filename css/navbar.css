@@ -42,9 +42,6 @@
     height: 3.125rem;
   }
 }
-.navbar-brand span {
-  display: none;
-}
 .navbar a,
 .navbar a:hover {
   color: #000;

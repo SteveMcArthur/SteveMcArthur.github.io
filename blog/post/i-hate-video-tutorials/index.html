@@ -9,6 +9,16 @@
     <meta name="author" content="Steve McArthur">
     <title>I hate video tutorials | Steve McArthur</title>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59463797-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-59463797-1');
+    </script>
+
     <!-- Twitter Card data -->
     <meta name="twitter:title" content="I hate video tutorials | Steve McArthur">
     <meta name="twitter:description" content="Please stop making video tutorials about coding subjects. Stop it or you&amp;#39;ll go blind - no seriously. I cannot stand video tutorials. When I do a search for information on learning a new technique ...">
@@ -40,21 +50,41 @@
     <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#fff">
     
-    <link href="https://fonts.googleapis.com/css?family&#x3D;Poppins:400,400i,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family&#x3D;Poppins:400,400i,500,600,700|Raleway:400,700" rel="stylesheet">
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
     <link href="/font-awesome/css/all.css" rel="stylesheet">
     <link href="/css/prism-vscode.css" rel="stylesheet">
     <link href="/css/vb.css" rel="stylesheet">
     <link href="/css/prism-headers.css" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                    "background": "#32949D"
+                    },
+                    "button": {
+                    "background": "#65c7d0"
+                    }
+                },
+                "content": {
+                    "href": "/privacy-policy/"
+                }
+            });
+        });
+    </script>
 
 
 </head>
-          <body>  <!-- Navigation -->
+<body class="">
+  <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container-fluid">   
     <a class="navbar-brand" href="/">
-    <img src="/img/title2.png" alt="Steve McArthur Logo">
     <span>Steve McArthur</span>
     </a>
     <button title="Menu" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

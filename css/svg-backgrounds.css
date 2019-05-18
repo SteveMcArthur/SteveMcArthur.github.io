@@ -112,6 +112,27 @@
 .background svg.sqlserver {
   fill: #A91D22;
 }
+#m-path {
+  fill: #feef20;
+}
+#s-path {
+  fill: #E2413E;
+}
+.background .logo-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  padding-top: 8rem;
+}
+@media only screen and (min-width: 992px) {
+  .background .logo-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    padding-top: 8rem;
+    float: left;
+  }
+}
 @media all and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
   .background.programming .svg1 {
     top: -32px;
