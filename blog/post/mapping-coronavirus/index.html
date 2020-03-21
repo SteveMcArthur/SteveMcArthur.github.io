@@ -163,8 +163,8 @@
 <p>Then add the js code to create the map on your page:</p>
 <pre><code class="lang-js">    //assuming your html map element has an id called &quot;map&quot;
     var map = L.map(&#39;map&#39;).setView([20, 0], 2);
-    L.tileLayer(&#39;http://{s}.tile.osm.org/{z}/{x}/{y}.png&#39;, {
-        attribution: &#39;&amp;copy; &lt;a href=&quot;http://osm.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors&#39;
+    L.tileLayer(&#39;https://{s}.tile.osm.org/{z}/{x}/{y}.png&#39;, {
+        attribution: &#39;&amp;copy; &lt;a href=&quot;https://osm.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors&#39;
     }).addTo(map);
 </code></pre>
 <p>This will put a map in your html element with the id of &quot;map&quot;. The first parameter of <code>setView</code> is the lat/long of the centre of the map, the second the zoom. <code>[20,0],2</code> will give you a world map view.</p>
@@ -335,8 +335,8 @@ function getCoords(address, cb) {
 
     //create map object and set default positions and zoom level
     let map = L.map(&#39;map&#39;).setView([20, 0], 2);
-    L.tileLayer(&#39;http://{s}.tile.osm.org/{z}/{x}/{y}.png&#39;, {
-        attribution: &#39;&amp;copy; &lt;a href=&quot;http://osm.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors&#39;
+    L.tileLayer(&#39;https://{s}.tile.osm.org/{z}/{x}/{y}.png&#39;, {
+        attribution: &#39;&amp;copy; &lt;a href=&quot;https://osm.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors&#39;
     }).addTo(map);
 
     //headers we need to pass to rapidapi
