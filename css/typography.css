@@ -1,7 +1,7 @@
 body {
   font-family: Poppins, sans-serif;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 2;
 }
 h1,
 h2,
@@ -18,7 +18,7 @@ h5 {
 .navbar-brand {
   font-family: Poppins, sans-serif;
   font-weight: 600;
-  font-size: 1.70rem;
+  font-size: 1.7rem;
 }
 @media (min-width: 768px) {
   .navbar-brand {
@@ -26,7 +26,7 @@ h5 {
   }
 }
 .navbar-brand span {
-  font-family: Raleway, sans-serif;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 .intro-cont p {
   font-size: 1.06rem;
@@ -60,6 +60,9 @@ h5 {
 }
 .post-content {
   font-weight: 400;
+}
+pre[class*="language-"] {
+  line-height: 2;
 }
 @media only screen and (min-width: 768px) {
   .post-heading h1 {

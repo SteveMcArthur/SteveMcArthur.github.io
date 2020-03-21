@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="I&amp;#39;ve been using Cloudflare for a number of years to manage DNS settings for the various websites I look after. It&amp;#39;s handy having all your DNS stuff in the one location and user interface rather than having to hop around to different hosts/domain providers and always having to look up ...">
-    <meta name="keywords" content="Steve McArthur, Stephen McArthur, web developer, web designer">
+    <meta name="description" content="I&amp;#39;ve been using Cloudflare for a number of years to manage DNS settings for the various websites I look after. It&amp;#39;s handy having all your DNS stuff in t...">
     <meta name="author" content="Steve McArthur">
     <title>Using Cloudflare for HTTPS | Steve McArthur</title>
 
@@ -21,42 +21,28 @@
 
     <!-- Twitter Card data -->
     <meta name="twitter:title" content="Using Cloudflare for HTTPS | Steve McArthur">
-    <meta name="twitter:description" content="I&amp;#39;ve been using Cloudflare for a number of years to manage DNS settings for the various websites I look after. It&amp;#39;s handy having all your DNS stuff in the one location and user interface rathe...">
+    <meta name="twitter:description" content="I&amp;#39;ve been using Cloudflare for a number of years to manage DNS settings for the various websites I look after. It&amp;#39;s handy having all your DNS stuff in t...">
     <meta name="twitter:image" content="https://www.stevemcarthur.co.uk/img/cloudflare-universal-ssl.jpg">
 
     <!-- Open Graph data -->
     <meta property="og:title" content="Using Cloudflare for HTTPS | Steve McArthur">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.stevemcarthur.co.uk/blog/post/cloudflare-ssh">
     <meta property="og:image" content="https://www.stevemcarthur.co.uk/img/cloudflare-universal-ssl.jpg">
-    <meta property="og:description" content="I&amp;#39;ve been using Cloudflare for a number of years to manage DNS settings for the various websites I look after. It&amp;#39;s handy having all your DNS stuff in the one location and user interface rather than having to hop around to different hosts/domain providers and always having to look up ...">
+    <meta property="og:description" content="I&amp;#39;ve been using Cloudflare for a number of years to manage DNS settings for the various websites I look after. It&amp;#39;s handy having all your DNS stuff in t...">
+    <link href="https://www.stevemcarthur.co.uk/blog/post/cloudflare-ssh" rel="canonical">
 
     <!--icons-->
     <link rel="icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="manifest" href="/icons/manifest.json">
-    <meta name="msapplication-TileColor" content="#fff">
-    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#fff">
-    
-    <link href="https://fonts.googleapis.com/css?family&#x3D;Poppins:400,400i,500,600,700|Montserrat+Alternates:400,700" rel="stylesheet">
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/styles.css" rel="stylesheet">
-    <link href="/font-awesome/css/all.css" rel="stylesheet">
-    <link href="/css/prism-vscode.css" rel="stylesheet">
-    <link href="/css/vb.css" rel="stylesheet">
-    <link href="/css/prism-headers.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family&#x3D;Poppins:400,400i,500,600,700|Montserrat+Alternates:400,700" rel="stylesheet">
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/styles.css" rel="stylesheet">
+        <link href="/font-awesome/css/all.css" rel="stylesheet">
+        <link href="/css/prism-vscode.css" rel="stylesheet">
+        <link href="/css/vb.css" rel="stylesheet">
+        <link href="/css/prism-headers.css" rel="stylesheet">
+
+
     
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
@@ -72,7 +58,7 @@
                     }
                 },
                 "content": {
-                    "href": "/privacy-policy/"
+                    "href": "/privacy/"
                 }
             });
         });
@@ -226,7 +212,7 @@
         <i class="fab fa-facebook-f"></i>
         </a>
         <a class="twitter" href="javascript:void(0)"  
-            onClick="window.open('https://twitter.com/intent/tweet?text=I%26%2339%3Bve%20been%20using%20Cloudflare%20for%20a%20number%20of%20years%20to%20manage%20DNS%20settings%20for%20the%20various%20websites%20I%20look%20after.%20It%26%2339%3Bs%20handy%20having%20all%20your%20DNS%20stuff%20in%20the%20one%20location%20and%20user%20interface%20rather%20than%20having%20to%20hop%20around%20to%20different%20hosts%2Fdomain%20providers%20and%20always%20having%20to%20look%20up%20...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcloudflare-ssh', 'twitter-share', 'width=550,height=235');return false;" 
+            onClick="window.open('https://twitter.com/intent/tweet?text=I%26%2339%3Bve%20been%20using%20Cloudflare%20for%20a%20number%20of%20years%20to%20manage%20DNS%20settings%20for%20the%20various%20websites%20I%20look%20after.%20It%26%2339%3Bs%20handy%20having%20all%20your%20DNS%20stuff%20in%20t...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcloudflare-ssh', 'twitter-share', 'width=550,height=235');return false;" 
             title="Share on Twitter" target="_blank" aria-label="Share on Twitter">
         <i class="fab fa-twitter"></i>
         </a>
@@ -243,7 +229,7 @@
     </div>
 </div>                                   </div>
                 <div class="m-0 sm">
-                <span class="copyright">Copyright &copy; Steve McArthur 2019</span><span> <a class="tc" href="/terms-and-conditions/">Terms and Conditions</a> </span><span><a href="/privacy-policy/">Privacy</a></span>             
+                <span class="copyright">Copyright &copy; Steve McArthur 2020</span><span> <a class="tc" href="/terms-and-conditions/">Terms and Conditions</a> </span><span><a href="/privacy-policy/">Privacy</a></span>             
                 </div>
 
                    
@@ -260,7 +246,7 @@
         <i class="fab fa-facebook-f"></i>
         </a>
         <a class="twitter" href="javascript:void(0)"  
-            onClick="window.open('https://twitter.com/intent/tweet?text=I%26%2339%3Bve%20been%20using%20Cloudflare%20for%20a%20number%20of%20years%20to%20manage%20DNS%20settings%20for%20the%20various%20websites%20I%20look%20after.%20It%26%2339%3Bs%20handy%20having%20all%20your%20DNS%20stuff%20in%20the%20one%20location%20and%20user%20interface%20rather%20than%20having%20to%20hop%20around%20to%20different%20hosts%2Fdomain%20providers%20and%20always%20having%20to%20look%20up%20...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcloudflare-ssh', 'twitter-share', 'width=550,height=235');return false;" 
+            onClick="window.open('https://twitter.com/intent/tweet?text=I%26%2339%3Bve%20been%20using%20Cloudflare%20for%20a%20number%20of%20years%20to%20manage%20DNS%20settings%20for%20the%20various%20websites%20I%20look%20after.%20It%26%2339%3Bs%20handy%20having%20all%20your%20DNS%20stuff%20in%20t...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcloudflare-ssh', 'twitter-share', 'width=550,height=235');return false;" 
             title="Share on Twitter" target="_blank" aria-label="Share on Twitter">
         <i class="fab fa-twitter"></i>
         </a>
@@ -311,7 +297,7 @@
                     }
                 },
                 "content": {
-                    "href": "/privacy-policy/"
+                    "href": "/privacy/"
                 }
             });
         });

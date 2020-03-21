@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="I use asp.net PageMethods in conjunction with ExtJS almost on a daily basis. PageMethods are simply server side methods that are callable from client side script. However, Microsoft assumes that you will be using PageMethods in conjunction with its Ajax framework, in particular the ScriptManager control which creates a JavaScript ...">
-    <meta name="keywords" content="ajax,javascript,js,ExtJS">
+    <meta name="description" content="I use asp.net PageMethods in conjunction with ExtJS almost on a daily basis. PageMethods are simply server side methods that are callable from client side scrip...">
     <meta name="author" content="Steve McArthur">
     <title>Calling ASP.net pagemethods from ExtJS | Steve McArthur</title>
 
@@ -21,42 +21,28 @@
 
     <!-- Twitter Card data -->
     <meta name="twitter:title" content="Calling ASP.net pagemethods from ExtJS | Steve McArthur">
-    <meta name="twitter:description" content="I use asp.net PageMethods in conjunction with ExtJS almost on a daily basis. PageMethods are simply server side methods that are callable from client side script. However, Microsoft assumes that you w...">
+    <meta name="twitter:description" content="I use asp.net PageMethods in conjunction with ExtJS almost on a daily basis. PageMethods are simply server side methods that are callable from client side scrip...">
     <meta name="twitter:image" content="https://www.stevemcarthur.co.uk/img/asp.net.jpg">
 
     <!-- Open Graph data -->
     <meta property="og:title" content="Calling ASP.net pagemethods from ExtJS | Steve McArthur">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.stevemcarthur.co.uk/blog/post/calling-ASPnet-pagemethods-from-ExtJS">
     <meta property="og:image" content="https://www.stevemcarthur.co.uk/img/asp.net.jpg">
-    <meta property="og:description" content="I use asp.net PageMethods in conjunction with ExtJS almost on a daily basis. PageMethods are simply server side methods that are callable from client side script. However, Microsoft assumes that you will be using PageMethods in conjunction with its Ajax framework, in particular the ScriptManager control which creates a JavaScript ...">
+    <meta property="og:description" content="I use asp.net PageMethods in conjunction with ExtJS almost on a daily basis. PageMethods are simply server side methods that are callable from client side scrip...">
+    <link href="https://www.stevemcarthur.co.uk/blog/post/calling-ASPnet-pagemethods-from-ExtJS" rel="canonical">
 
     <!--icons-->
     <link rel="icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="manifest" href="/icons/manifest.json">
-    <meta name="msapplication-TileColor" content="#fff">
-    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#fff">
-    
-    <link href="https://fonts.googleapis.com/css?family&#x3D;Poppins:400,400i,500,600,700|Montserrat+Alternates:400,700" rel="stylesheet">
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/styles.css" rel="stylesheet">
-    <link href="/font-awesome/css/all.css" rel="stylesheet">
-    <link href="/css/prism-vscode.css" rel="stylesheet">
-    <link href="/css/vb.css" rel="stylesheet">
-    <link href="/css/prism-headers.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family&#x3D;Poppins:400,400i,500,600,700|Montserrat+Alternates:400,700" rel="stylesheet">
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/styles.css" rel="stylesheet">
+        <link href="/font-awesome/css/all.css" rel="stylesheet">
+        <link href="/css/prism-vscode.css" rel="stylesheet">
+        <link href="/css/vb.css" rel="stylesheet">
+        <link href="/css/prism-headers.css" rel="stylesheet">
+
+
     
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
@@ -72,7 +58,7 @@
                     }
                 },
                 "content": {
-                    "href": "/privacy-policy/"
+                    "href": "/privacy/"
                 }
             });
         });
@@ -238,7 +224,7 @@ Ext.Ajax.request({
         <i class="fab fa-facebook-f"></i>
         </a>
         <a class="twitter" href="javascript:void(0)"  
-            onClick="window.open('https://twitter.com/intent/tweet?text=I%20use%20asp.net%20PageMethods%20in%20conjunction%20with%20ExtJS%20almost%20on%20a%20daily%20basis.%20PageMethods%20are%20simply%20server%20side%20methods%20that%20are%20callable%20from%20client%20side%20script.%20However%2C%20Microsoft%20assumes%20that%20you%20will%20be%20using%20PageMethods%20in%20conjunction%20with%20its%20Ajax%20framework%2C%20in%20particular%20the%20ScriptManager%20control%20which%20creates%20a%20JavaScript%20...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcalling-ASPnet-pagemethods-from-ExtJS', 'twitter-share', 'width=550,height=235');return false;" 
+            onClick="window.open('https://twitter.com/intent/tweet?text=I%20use%20asp.net%20PageMethods%20in%20conjunction%20with%20ExtJS%20almost%20on%20a%20daily%20basis.%20PageMethods%20are%20simply%20server%20side%20methods%20that%20are%20callable%20from%20client%20side%20scrip...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcalling-ASPnet-pagemethods-from-ExtJS', 'twitter-share', 'width=550,height=235');return false;" 
             title="Share on Twitter" target="_blank" aria-label="Share on Twitter">
         <i class="fab fa-twitter"></i>
         </a>
@@ -255,7 +241,7 @@ Ext.Ajax.request({
     </div>
 </div>                                   </div>
                 <div class="m-0 sm">
-                <span class="copyright">Copyright &copy; Steve McArthur 2019</span><span> <a class="tc" href="/terms-and-conditions/">Terms and Conditions</a> </span><span><a href="/privacy-policy/">Privacy</a></span>             
+                <span class="copyright">Copyright &copy; Steve McArthur 2020</span><span> <a class="tc" href="/terms-and-conditions/">Terms and Conditions</a> </span><span><a href="/privacy-policy/">Privacy</a></span>             
                 </div>
 
                    
@@ -272,7 +258,7 @@ Ext.Ajax.request({
         <i class="fab fa-facebook-f"></i>
         </a>
         <a class="twitter" href="javascript:void(0)"  
-            onClick="window.open('https://twitter.com/intent/tweet?text=I%20use%20asp.net%20PageMethods%20in%20conjunction%20with%20ExtJS%20almost%20on%20a%20daily%20basis.%20PageMethods%20are%20simply%20server%20side%20methods%20that%20are%20callable%20from%20client%20side%20script.%20However%2C%20Microsoft%20assumes%20that%20you%20will%20be%20using%20PageMethods%20in%20conjunction%20with%20its%20Ajax%20framework%2C%20in%20particular%20the%20ScriptManager%20control%20which%20creates%20a%20JavaScript%20...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcalling-ASPnet-pagemethods-from-ExtJS', 'twitter-share', 'width=550,height=235');return false;" 
+            onClick="window.open('https://twitter.com/intent/tweet?text=I%20use%20asp.net%20PageMethods%20in%20conjunction%20with%20ExtJS%20almost%20on%20a%20daily%20basis.%20PageMethods%20are%20simply%20server%20side%20methods%20that%20are%20callable%20from%20client%20side%20scrip...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcalling-ASPnet-pagemethods-from-ExtJS', 'twitter-share', 'width=550,height=235');return false;" 
             title="Share on Twitter" target="_blank" aria-label="Share on Twitter">
         <i class="fab fa-twitter"></i>
         </a>
@@ -323,7 +309,7 @@ Ext.Ajax.request({
                     }
                 },
                 "content": {
-                    "href": "/privacy-policy/"
+                    "href": "/privacy/"
                 }
             });
         });

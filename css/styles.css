@@ -83,9 +83,9 @@ h6 a:hover {
 #back-to-top.on {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: opacity .3s ease;
-  -moz-transition: opacity .3s ease;
-  transition: opacity .3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 #back-to-top > span {
   position: relative;
@@ -129,7 +129,7 @@ h6 a:hover {
 body {
   font-family: Poppins, sans-serif;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 2;
 }
 h1,
 h2,
@@ -146,7 +146,7 @@ h5 {
 .navbar-brand {
   font-family: Poppins, sans-serif;
   font-weight: 600;
-  font-size: 1.70rem;
+  font-size: 1.7rem;
 }
 @media (min-width: 768px) {
   .navbar-brand {
@@ -188,6 +188,9 @@ h5 {
 }
 .post-content {
   font-weight: 400;
+}
+pre[class*="language-"] {
+  line-height: 2;
 }
 @media only screen and (min-width: 768px) {
   .post-heading h1 {
@@ -484,7 +487,7 @@ footer .share-cont {
   width: 100%;
   vertical-align: middle;
   margin: 0;
-  line-height: 1.58;
+  line-height: 2;
   text-align: left;
   padding-top: 10px;
   /*     padding-left: 40px;
@@ -1025,6 +1028,20 @@ footer.fixed-bottom {
   width: 80%;
   margin: auto;
   padding-top: 8rem;
+}
+.map-container {
+  position: relative;
+  margin: auto;
+  width: 800px;
+  height: 400px;
+  margin-bottom: 10px;
+}
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 @media only screen and (min-width: 992px) {
   .background .logo-container {
