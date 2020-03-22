@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,12 +19,12 @@
     </script>
 
     <!-- Twitter Card data -->
-    <meta name="twitter:title" content="Mapping Coronavirus | Steve McArthur">
+    <meta name="twitter:title" content="Mapping Coronavirus">
     <meta name="twitter:description" content="With the recent worldwide crisis regarding the Coronavirus I thought it appropriate to develop a little mapping app to help visualise the virus spread. Every ti...">
     <meta name="twitter:image" content="https://www.stevemcarthur.co.uk/img/chronavirus-map.jpg">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Mapping Coronavirus | Steve McArthur">
+    <meta property="og:title" content="Mapping Coronavirus">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.stevemcarthur.co.uk/blog/post/mapping-coronavirus">
     <meta property="og:image" content="https://www.stevemcarthur.co.uk/img/chronavirus-map.jpg">
@@ -34,35 +33,11 @@
 
     <!--icons-->
     <link rel="icon" href="/favicon.ico">
-        <link href="https://fonts.googleapis.com/css?family&#x3D;Poppins:400,400i,500,600,700|Montserrat+Alternates:400,700" rel="stylesheet">
-        <link href="/css/bootstrap.css" rel="stylesheet">
-        <link href="/font-awesome/css/all.css" rel="stylesheet">
-        <link href="/css/styles.css" rel="stylesheet">
-        <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet">
-
-
-    
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-    <script>
-        window.addEventListener("load", function(){
-            window.cookieconsent.initialise({
-                "palette": {
-                    "popup": {
-                    "background": "#32949D"
-                    },
-                    "button": {
-                    "background": "#65c7d0"
-                    }
-                },
-                "content": {
-                    "href": "/privacy/"
-                }
-            });
-        });
-    </script>
-
-
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,600,700|Montserrat+Alternates:400,700" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet"> 
+    <link href="/font-awesome/css/all.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet">
 </head>
 <body class="">
   <!-- Navigation -->
@@ -154,52 +129,52 @@
 <p><img src="/img/leaflet.jpg" alt="OpenCage Geocode"></p>
 <p>In the past I would have simply gone to Google Maps, but these days it&#39;s a little bit trickier without paying and putting your credit card details with them.</p>
 <p>My Google Maps replacement is <a href="https://leafletjs.com/">Leaflet</a> which is based on <a href="https://www.openstreetmap.org">OpenStreetMap</a>&#39;s mapping data. Setting up Leaflet is straight forward. Include the js and css files on your page:</p>
-<pre><code class="lang-html">    &lt;link href=&quot;https://unpkg.com/leaflet@1.6.0/dist/leaflet.css&quot; rel=&quot;stylesheet&quot;&gt;
-    &lt;script src=&quot;https://unpkg.com/leaflet@1.6.0/dist/leaflet.js&quot;&gt;&lt;/script&gt;
+<pre><code class="lang-html">&lt;link href=&quot;https://unpkg.com/leaflet@1.6.0/dist/leaflet.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;script src=&quot;https://unpkg.com/leaflet@1.6.0/dist/leaflet.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <p>Then add the js code to create the map on your page:</p>
-<pre><code class="lang-js">    //assuming your html map element has an id called &quot;map&quot;
-    var map = L.map(&#39;map&#39;).setView([20, 0], 2);
-    L.tileLayer(&#39;https://{s}.tile.osm.org/{z}/{x}/{y}.png&#39;, {
-        attribution: &#39;&amp;copy; &lt;a href=&quot;https://osm.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors&#39;
-    }).addTo(map);
+<pre><code class="lang-js">//assuming your html map element has an id called &quot;map&quot;
+var map = L.map(&#39;map&#39;).setView([20, 13], 2);
+L.tileLayer(&#39;https://{s}.tile.osm.org/{z}/{x}/{y}.png&#39;, {
+    attribution: &#39;&amp;copy; &lt;a href=&quot;https://osm.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors&#39;
+}).addTo(map);
 </code></pre>
-<p>This will put a map in your html element with the id of &quot;map&quot;. The first parameter of <code>setView</code> is the lat/long of the centre of the map, the second the zoom. <code>[20,0],2</code> will give you a world map view.</p>
+<p>This will put a map in your html element with the id of &quot;map&quot;. The first parameter of <code>setView</code> is the lat/long of the centre of the map, the second the zoom. <code>[20,13],2</code> will give you a world map view.</p>
 <p>To put some sort of marker on the map indicating where a coronavirus outbreak has occurred we need two sources. One for the virus data and one for the coordinate data.</p>
 <h2 id="virus-data-source-rapidapi">Virus Data Source: RapidAPI</h2>
 <p><img src="/img/rapidapi.jpg" alt="Rapid API"></p>
 <p>This is what I used for the virus data. Whilst the <a href="https://www.who.int/">WHO</a> does have some sort of data feed, I thought it simpler to just go to <a href="https://rapidapi.com/">RapidAPI</a>. The source of their data does come from WHO, I just thought it would be easier to set up.</p>
 <p>Once you sign up for an API key at <a href="https://rapidapi.com/">https://rapidapi.com/</a>, you just make a call to the API url and it returns the data in the following format: </p>
 <pre><code class="lang-json">{
-    &quot;error&quot;: false,
-    &quot;statusCode&quot;: 200,
-    &quot;message&quot;: &quot;OK&quot;,
-    &quot;data&quot;: {
-        &quot;lastChecked&quot;: &quot;2020-03-21T05:02:35.635Z&quot;,
-        &quot;covid19Stats&quot;: [{
-                &quot;province&quot;: &quot;Hubei&quot;,
-                &quot;country&quot;: &quot;China&quot;,
-                &quot;lastUpdate&quot;: &quot;2020-03-20T07:43:02&quot;,
-                &quot;confirmed&quot;: 67800,
-                &quot;deaths&quot;: 3133,
-                &quot;recovered&quot;: 58382
-            }, {
+&quot;error&quot;: false,
+&quot;statusCode&quot;: 200,
+&quot;message&quot;: &quot;OK&quot;,
+&quot;data&quot;: {
+    &quot;lastChecked&quot;: &quot;2020-03-21T05:02:35.635Z&quot;,
+    &quot;covid19Stats&quot;: [{
+            &quot;province&quot;: &quot;Hubei&quot;,
+            &quot;country&quot;: &quot;China&quot;,
+            &quot;lastUpdate&quot;: &quot;2020-03-20T07:43:02&quot;,
+            &quot;confirmed&quot;: 67800,
+            &quot;deaths&quot;: 3133,
+            &quot;recovered&quot;: 58382
+        }, {
             ....
 </code></pre>
 <p>When I say a &quot;call to the API url&quot; you also need to pass two headers with your call, one of which contains your API key. In jQuery it&#39;s like this:</p>
-<pre><code class="lang-js">    let opts = {
-        headers:{
-            &quot;x-rapidapi-host&quot; : &quot;covid-19-coronavirus-statistics.p.rapidapi.com&quot;,
-            &quot;x-rapidapi-key&quot;: &quot;YOUR-API-KEY&quot;
-        }
-    };
+<pre><code class="lang-js">let opts = {
+    headers:{
+        &quot;x-rapidapi-host&quot; : &quot;covid-19-coronavirus-statistics.p.rapidapi.com&quot;,
+        &quot;x-rapidapi-key&quot;: &quot;YOUR-API-KEY&quot;
+    }
+};
 
-    let url = &quot;https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats&quot;;
+let url = &quot;https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats&quot;;
 
-    //call the API
-    $.ajax(url,opts).done(function (data, status) {
-        //do something with the returned data
-    });
+//call the API
+$.ajax(url,opts).done(function (data, status) {
+    //do something with the returned data
+});
 </code></pre>
 <h2 id="geocoding-opencage">Geocoding: OpenCage</h2>
 <p><img src="/img/opencage.jpg" alt="OpenCage Geocode"></p>
@@ -207,12 +182,12 @@
 <p>To get the coordinates we need to fire this country-province text at a geocoding service. </p>
 <p>There are several geocoding services available. I chose <a href="https://opencagedata.com/">OpenCage</a>.</p>
 <p>Since the data returned from RapidAPI looks something like this:</p>
-<pre><code class="lang-json">    &quot;province&quot;: &quot;New York&quot;,
-    &quot;country&quot;: &quot;US&quot;,
-    &quot;lastUpdate&quot;: &quot;2020-03-20T22:14:43&quot;,
-    &quot;confirmed&quot;: 8310,
-    &quot;deaths&quot;: 42,
-    &quot;recovered&quot;: 0
+<pre><code class="lang-json">&quot;province&quot;: &quot;New York&quot;,
+&quot;country&quot;: &quot;US&quot;,
+&quot;lastUpdate&quot;: &quot;2020-03-20T22:14:43&quot;,
+&quot;confirmed&quot;: 8310,
+&quot;deaths&quot;: 42,
+&quot;recovered&quot;: 0
 </code></pre>
 <p>The address here is basically &quot;New York, US&quot;. This is what needs to be fired at OpenCage.</p>
 <p>What I decided to do was run all my addresses against OpenCage just once. Then my app can consume the result as a static JSON file. This means I don&#39;t have to repeatedly query the geocoding service.</p>
@@ -254,125 +229,124 @@ function getCoords(address, cb) {
 <h2 id="bringing-the-whole-lot-together">Bringing the Whole Lot Together</h2>
 <p>This is what I ended up with to generate the map:</p>
 <pre><code class="lang-js">$(function () {
-
-    //this is used to create different sized and coloured
-    //circles according to how many deaths there have been
-    let circleConfigs = {
-        51: {//less than 51
-            radius: 2,
-            color: &#39;green&#39;,
-            fillColor: &#39;#00ff22&#39;,
-            fillOpacity: 0.5
-         },
-         101: { //less than 101
-            radius: 5,
-            color: &#39;blue&#39;,
-            fillColor: &#39;#009dff&#39;,
-            fillOpacity: 0.5
-         },
-         201: {
-            radius: 10,
-            color: &#39;blue&#39;,
-            fillColor: &#39;#009dff&#39;,
-            fillOpacity: 0.5
-         },
-         501: {
-            radius: 10,
-            color: &#39;magenta&#39;,
-            fillColor: &#39;#FF00FF&#39;,
-            fillOpacity: 0.5
-         },
-         1001: {
-            radius: 10,
-            color: &#39;red&#39;,
-            fillColor: &#39;#f03&#39;,
-            fillOpacity: 0.5
-         },
-         1000000: {
-            radius: 15,
-            color: &#39;red&#39;,
-            fillColor: &#39;#f03&#39;,
-            fillOpacity: 1
-         }
+//this is used to create different sized and coloured
+//circles according to how many deaths there have been
+let circleConfigs = {
+    51: {//less than 51
+    radius: 2,
+    color: &#39;green&#39;,
+    fillColor: &#39;#00ff22&#39;,
+    fillOpacity: 0.5
+    },
+    101: { //less than 101
+    radius: 5,
+    color: &#39;blue&#39;,
+    fillColor: &#39;#009dff&#39;,
+    fillOpacity: 0.5
+    },
+    201: {
+    radius: 10,
+    color: &#39;blue&#39;,
+    fillColor: &#39;#009dff&#39;,
+    fillOpacity: 0.5
+    },
+    501: {
+    radius: 10,
+    color: &#39;magenta&#39;,
+    fillColor: &#39;#FF00FF&#39;,
+    fillOpacity: 0.5
+    },
+    1001: {
+    radius: 10,
+    color: &#39;red&#39;,
+    fillColor: &#39;#f03&#39;,
+    fillOpacity: 0.5
+    },
+    1000000: {
+    radius: 15,
+    color: &#39;red&#39;,
+    fillColor: &#39;#f03&#39;,
+    fillOpacity: 1
     }
+}
 
-    //function called to assign circle config
-    //by the number passed
-    function getCircle(num){
-        let output = {
-            radius: 10,
-            color: &#39;red&#39;,
-            fillColor: &#39;#f03&#39;,
-            fillOpacity: 1
-        };
-        for(key in circleConfigs){
-            if(num &lt; key){
-                output = circleConfigs[key];
-                break;
-            }
-        }
-        return output;
-    }
-
-    //lookup object for coordinates
-    let geocodedAddresses = {}
-
-    //load the address list with corresponding coordinates
-    $.getJSON(&quot;/js/geocoded-addresses.json&quot;, function (data, status) {
-        data.forEach(function (item) {
-            //add the data to a dictionary style object
-            //so that it is easy to look up each address
-            geocodedAddresses[item.address] = {
-                formatted: item.formatted, // just a nicer looking address - incase we want it
-                geometry: item.geometry// lats &amp; longs
-            }
-        })
-
-    });
-
-    //create map object and set default positions and zoom level
-    let map = L.map(&#39;map&#39;).setView([20, 0], 2);
-    L.tileLayer(&#39;https://{s}.tile.osm.org/{z}/{x}/{y}.png&#39;, {
-        attribution: &#39;&amp;copy; &lt;a href=&quot;https://osm.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors&#39;
-    }).addTo(map);
-
-    //headers we need to pass to rapidapi
-    let opts = {
-        headers:{
-            &quot;x-rapidapi-host&quot; : &quot;covid-19-coronavirus-statistics.p.rapidapi.com&quot;,
-            &quot;x-rapidapi-key&quot;: &quot;YOUR-API-KEY&quot;
-        }
+//function called to assign circle config
+//by the number passed
+function getCircle(num){
+    let output = {
+        radius: 10,
+        color: &#39;red&#39;,
+        fillColor: &#39;#f03&#39;,
+        fillOpacity: 1
     };
-
-    //REST service endpoint
-    let url = &quot;https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats&quot;;
-
-
-    let stats = [];
-    //call the service
-    $.ajax(url,opts).done(function (data, status) {
-        stats = data.data.covid19Stats;
-
-        //now create the circle markers
-        for (let i = 0; i &lt; stats.length; i++) {
-            let item = stats[i];
-            let address = item.province + &quot;,&quot; + item.country;
-            let geo = geocodedAddresses[address];
-            if (geo) {
-                if (geo.geometry &amp;&amp; geo.geometry.lat) {
-                    let txt = geo.formatted + &quot;&lt;br&gt;Deaths: &quot; + item.deaths;
-                    let circle = getCircle(item.deaths);
-                    L.circleMarker([geo.geometry.lat, geo.geometry.lng],circle)
-                    .bindPopup(txt).addTo(map);
-                } else {
-                    console.log(&quot;Missing geometry: &quot; + address);
-                    console.log(geo);
-                }
-            } else {
-                console.log(&quot;Missing: &quot; + address);
-            }
+    for(key in circleConfigs){
+        if(num &lt; key){
+            output = circleConfigs[key];
+            break;
         }
-    });
+    }
+    return output;
+}
+
+//lookup object for coordinates
+let geocodedAddresses = {}
+
+//load the address list with corresponding coordinates
+$.getJSON(&quot;/js/geocoded-addresses.json&quot;, function (data, status) {
+    data.forEach(function (item) {
+        //add the data to a dictionary style object
+        //so that it is easy to look up each address
+        geocodedAddresses[item.address] = {
+            formatted: item.formatted, // just a nicer looking address - incase we want it
+            geometry: item.geometry// lats &amp; longs
+        }
+    })
+
+});
+
+//create map object and set default positions and zoom level
+let map = L.map(&#39;map&#39;).setView([20, 13], 2);
+L.tileLayer(&#39;https://{s}.tile.osm.org/{z}/{x}/{y}.png&#39;, {
+    attribution: &#39;&amp;copy; &lt;a href=&quot;https://osm.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors&#39;
+}).addTo(map);
+
+//headers we need to pass to rapidapi
+let opts = {
+    headers:{
+        &quot;x-rapidapi-host&quot; : &quot;covid-19-coronavirus-statistics.p.rapidapi.com&quot;,
+        &quot;x-rapidapi-key&quot;: &quot;YOUR-API-KEY&quot;
+    }
+};
+
+//REST service endpoint
+let url = &quot;https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats&quot;;
+
+
+let stats = [];
+//call the service
+$.ajax(url,opts).done(function (data, status) {
+    stats = data.data.covid19Stats;
+
+    //now create the circle markers
+    for (let i = 0; i &lt; stats.length; i++) {
+        let item = stats[i];
+        let address = item.province + &quot;,&quot; + item.country;
+        let geo = geocodedAddresses[address];
+        if (geo) {
+            if (geo.geometry &amp;&amp; geo.geometry.lat) {
+                let txt = geo.formatted + &quot;&lt;br&gt;Deaths: &quot; + item.deaths;
+                let circle = getCircle(item.deaths);
+                L.circleMarker([geo.geometry.lat, geo.geometry.lng],circle)
+                .bindPopup(txt).addTo(map);
+            } else {
+                console.log(&quot;Missing geometry: &quot; + address);
+                console.log(geo);
+            }
+        } else {
+            console.log(&quot;Missing: &quot; + address);
+        }
+    }
+});
 
 });
 </code></pre>
@@ -426,22 +400,22 @@ function getCoords(address, cb) {
                     <div class="share-cont">
     <div class="socials">
         <a class="facebook" href="javascript:void(0)"  
-            onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fmapping-coronavirus', 'facebook-share', 'width=580,height=296');return false;"
+            onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fmapping-coronavirus%2F', 'facebook-share', 'width=580,height=296');return false;"
             title="Share on Facebook" aria-label="Share on Facebook" >
         <i class="fab fa-facebook-f"></i>
         </a>
         <a class="twitter" href="javascript:void(0)"  
-            onClick="window.open('https://twitter.com/intent/tweet?text=With%20the%20recent%20worldwide%20crisis%20regarding%20the%20Coronavirus%20I%20thought%20it%20appropriate%20to%20develop%20a%20little%20mapping%20app%20to%20help%20visualise%20the%20virus%20spread.%20Every%20ti...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fmapping-coronavirus', 'twitter-share', 'width=550,height=235');return false;" 
+            onClick="window.open('https://twitter.com/intent/tweet?text=With%20the%20recent%20worldwide%20crisis%20regarding%20the%20Coronavirus%20I%20thought%20it%20appropriate%20to%20develop%20a%20little%20mapping%20app%20to%20help%20visualise%20the%20virus%20spread.%20Every%20ti...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fmapping-coronavirus%2F', 'twitter-share', 'width=550,height=235');return false;" 
             title="Share on Twitter" target="_blank" aria-label="Share on Twitter">
         <i class="fab fa-twitter"></i>
         </a>
-        <a class="google-plus" href="javascript:void(0)"  
-            onClick="window.open('https://plus.google.com/share?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fmapping-coronavirus', 'google-plus-share', 'width=490,height=530');return false;"
-            title="Share on Google+" target="_blank" aria-label="Share on Google+">
-        <i class="fab fa-google"></i>
+        <a class="whatsapp" href="javascript:void(0)" 
+            onClick="window.open('https://wa.me/?text=Mapping%20Coronavirus https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fmapping-coronavirus%2F', 'whatsapp-share', 'width=490,height=530');return false;" 
+            title="Share on WhatsApp" target="_blank" aria-label="Share on WhatsApp"> 
+         <i class="fab fa-whatsapp"></i>  
         </a>
         <a class="pinterest" href="javascript:void(0)"  
-            onClick="window.open('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fmapping-coronavirus&#38;media=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fimg%2Fchronavirus-map.jpg', 'pinterest-share', 'width=490,height=530');return false;"
+            onClick="window.open('https://pinterest.com/pin/create/bookmarklet/?media=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fimg%2Fchronavirus-map.jpg&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fmapping-coronavirus%2F&#38;description=Mapping%20Coronavirus', 'pinterest-share', 'width=490,height=530');return false;"
             title="Share on Pinterest" target="_blank" aria-label="Share on Pinterest">
         <i class="fab fa-pinterest"></i>
         </a>
@@ -460,22 +434,22 @@ function getCoords(address, cb) {
   <div class="share-cont">
     <div class="socials">
         <a class="facebook" href="javascript:void(0)"  
-            onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fmapping-coronavirus', 'facebook-share', 'width=580,height=296');return false;"
+            onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fmapping-coronavirus%2F', 'facebook-share', 'width=580,height=296');return false;"
             title="Share on Facebook" aria-label="Share on Facebook" >
         <i class="fab fa-facebook-f"></i>
         </a>
         <a class="twitter" href="javascript:void(0)"  
-            onClick="window.open('https://twitter.com/intent/tweet?text=With%20the%20recent%20worldwide%20crisis%20regarding%20the%20Coronavirus%20I%20thought%20it%20appropriate%20to%20develop%20a%20little%20mapping%20app%20to%20help%20visualise%20the%20virus%20spread.%20Every%20ti...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fmapping-coronavirus', 'twitter-share', 'width=550,height=235');return false;" 
+            onClick="window.open('https://twitter.com/intent/tweet?text=With%20the%20recent%20worldwide%20crisis%20regarding%20the%20Coronavirus%20I%20thought%20it%20appropriate%20to%20develop%20a%20little%20mapping%20app%20to%20help%20visualise%20the%20virus%20spread.%20Every%20ti...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fmapping-coronavirus%2F', 'twitter-share', 'width=550,height=235');return false;" 
             title="Share on Twitter" target="_blank" aria-label="Share on Twitter">
         <i class="fab fa-twitter"></i>
         </a>
-        <a class="google-plus" href="javascript:void(0)"  
-            onClick="window.open('https://plus.google.com/share?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fmapping-coronavirus', 'google-plus-share', 'width=490,height=530');return false;"
-            title="Share on Google+" target="_blank" aria-label="Share on Google+">
-        <i class="fab fa-google"></i>
+        <a class="whatsapp" href="javascript:void(0)" 
+            onClick="window.open('https://wa.me/?text=Mapping%20Coronavirus https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fmapping-coronavirus%2F', 'whatsapp-share', 'width=490,height=530');return false;" 
+            title="Share on WhatsApp" target="_blank" aria-label="Share on WhatsApp"> 
+         <i class="fab fa-whatsapp"></i>  
         </a>
         <a class="pinterest" href="javascript:void(0)"  
-            onClick="window.open('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fmapping-coronavirus&#38;media=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fimg%2Fchronavirus-map.jpg', 'pinterest-share', 'width=490,height=530');return false;"
+            onClick="window.open('https://pinterest.com/pin/create/bookmarklet/?media=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fimg%2Fchronavirus-map.jpg&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fmapping-coronavirus%2F&#38;description=Mapping%20Coronavirus', 'pinterest-share', 'width=490,height=530');return false;"
             title="Share on Pinterest" target="_blank" aria-label="Share on Pinterest">
         <i class="fab fa-pinterest"></i>
         </a>
@@ -498,7 +472,6 @@ function getCoords(address, cb) {
 
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
   <script src="/js/chronavirus-map.js"></script>
-  
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
     <script>
@@ -517,7 +490,16 @@ function getCoords(address, cb) {
                 }
             });
         });
-    </script>  </body>
+    </script>
+    <style>
+    .cc-window.cc-banner, .cc-window {
+        width: 98% !important;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    
+    </style>
+</body>
 
 </html>
 

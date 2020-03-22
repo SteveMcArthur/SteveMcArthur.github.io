@@ -124,20 +124,6 @@
   margin: auto;
   padding-top: 8rem;
 }
-.map-container {
-  position: relative;
-  margin: auto;
-  width: 800px;
-  height: 400px;
-  margin-bottom: 10px;
-}
-#map {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
 @media only screen and (min-width: 992px) {
   .background .logo-container {
     position: relative;

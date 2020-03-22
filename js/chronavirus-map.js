@@ -76,7 +76,7 @@ $(function () {
     });
 
     //create map object and set default positions and zoom level
-    let map = L.map('map').setView([20, 0], 2);
+    let map = L.map('map').setView([20, 13], 2);
     L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);

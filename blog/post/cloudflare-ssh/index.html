@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="I&amp;#39;ve been using Cloudflare for a number of years to manage DNS settings for the various websites I look after. It&amp;#39;s handy having all your DNS stuff in t...">
+    <meta name="description" content="I&#39;ve been using Cloudflare for a number of years to manage DNS settings for the various websites I look after. It&#39;s handy having all your DNS stuff in t...">
     <meta name="author" content="Steve McArthur">
     <title>Using Cloudflare for HTTPS | Steve McArthur</title>
 
@@ -20,48 +19,24 @@
     </script>
 
     <!-- Twitter Card data -->
-    <meta name="twitter:title" content="Using Cloudflare for HTTPS | Steve McArthur">
-    <meta name="twitter:description" content="I&amp;#39;ve been using Cloudflare for a number of years to manage DNS settings for the various websites I look after. It&amp;#39;s handy having all your DNS stuff in t...">
+    <meta name="twitter:title" content="Using Cloudflare for HTTPS">
+    <meta name="twitter:description" content="I&#39;ve been using Cloudflare for a number of years to manage DNS settings for the various websites I look after. It&#39;s handy having all your DNS stuff in t...">
     <meta name="twitter:image" content="https://www.stevemcarthur.co.uk/img/cloudflare-universal-ssl.jpg">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Using Cloudflare for HTTPS | Steve McArthur">
+    <meta property="og:title" content="Using Cloudflare for HTTPS">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.stevemcarthur.co.uk/blog/post/cloudflare-ssh">
     <meta property="og:image" content="https://www.stevemcarthur.co.uk/img/cloudflare-universal-ssl.jpg">
-    <meta property="og:description" content="I&amp;#39;ve been using Cloudflare for a number of years to manage DNS settings for the various websites I look after. It&amp;#39;s handy having all your DNS stuff in t...">
+    <meta property="og:description" content="I&#39;ve been using Cloudflare for a number of years to manage DNS settings for the various websites I look after. It&#39;s handy having all your DNS stuff in t...">
     <link href="https://www.stevemcarthur.co.uk/blog/post/cloudflare-ssh" rel="canonical">
 
     <!--icons-->
     <link rel="icon" href="/favicon.ico">
-        <link href="https://fonts.googleapis.com/css?family&#x3D;Poppins:400,400i,500,600,700|Montserrat+Alternates:400,700" rel="stylesheet">
-        <link href="/css/bootstrap.css" rel="stylesheet">
-        <link href="/font-awesome/css/all.css" rel="stylesheet">
-        <link href="/css/styles.css" rel="stylesheet">
-
-
-    
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-    <script>
-        window.addEventListener("load", function(){
-            window.cookieconsent.initialise({
-                "palette": {
-                    "popup": {
-                    "background": "#32949D"
-                    },
-                    "button": {
-                    "background": "#65c7d0"
-                    }
-                },
-                "content": {
-                    "href": "/privacy/"
-                }
-            });
-        });
-    </script>
-
-
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,600,700|Montserrat+Alternates:400,700" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet"> 
+    <link href="/font-awesome/css/all.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
 </head>
 <body class="">
   <!-- Navigation -->
@@ -204,22 +179,22 @@
                     <div class="share-cont">
     <div class="socials">
         <a class="facebook" href="javascript:void(0)"  
-            onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcloudflare-ssh', 'facebook-share', 'width=580,height=296');return false;"
+            onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fcloudflare-ssh%2F', 'facebook-share', 'width=580,height=296');return false;"
             title="Share on Facebook" aria-label="Share on Facebook" >
         <i class="fab fa-facebook-f"></i>
         </a>
         <a class="twitter" href="javascript:void(0)"  
-            onClick="window.open('https://twitter.com/intent/tweet?text=I%26%2339%3Bve%20been%20using%20Cloudflare%20for%20a%20number%20of%20years%20to%20manage%20DNS%20settings%20for%20the%20various%20websites%20I%20look%20after.%20It%26%2339%3Bs%20handy%20having%20all%20your%20DNS%20stuff%20in%20t...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcloudflare-ssh', 'twitter-share', 'width=550,height=235');return false;" 
+            onClick="window.open('https://twitter.com/intent/tweet?text=I%26%2339%3Bve%20been%20using%20Cloudflare%20for%20a%20number%20of%20years%20to%20manage%20DNS%20settings%20for%20the%20various%20websites%20I%20look%20after.%20It%26%2339%3Bs%20handy%20having%20all%20your%20DNS%20stuff%20in%20t...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fcloudflare-ssh%2F', 'twitter-share', 'width=550,height=235');return false;" 
             title="Share on Twitter" target="_blank" aria-label="Share on Twitter">
         <i class="fab fa-twitter"></i>
         </a>
-        <a class="google-plus" href="javascript:void(0)"  
-            onClick="window.open('https://plus.google.com/share?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcloudflare-ssh', 'google-plus-share', 'width=490,height=530');return false;"
-            title="Share on Google+" target="_blank" aria-label="Share on Google+">
-        <i class="fab fa-google"></i>
+        <a class="whatsapp" href="javascript:void(0)" 
+            onClick="window.open('https://wa.me/?text=Using%20Cloudflare%20for%20HTTPS https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fcloudflare-ssh%2F', 'whatsapp-share', 'width=490,height=530');return false;" 
+            title="Share on WhatsApp" target="_blank" aria-label="Share on WhatsApp"> 
+         <i class="fab fa-whatsapp"></i>  
         </a>
         <a class="pinterest" href="javascript:void(0)"  
-            onClick="window.open('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcloudflare-ssh&#38;media=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fimg%2Fcloudflare-universal-ssl.jpg', 'pinterest-share', 'width=490,height=530');return false;"
+            onClick="window.open('https://pinterest.com/pin/create/bookmarklet/?media=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fimg%2Fcloudflare-universal-ssl.jpg&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fcloudflare-ssh%2F&#38;description=Using%20Cloudflare%20for%20HTTPS', 'pinterest-share', 'width=490,height=530');return false;"
             title="Share on Pinterest" target="_blank" aria-label="Share on Pinterest">
         <i class="fab fa-pinterest"></i>
         </a>
@@ -238,22 +213,22 @@
   <div class="share-cont">
     <div class="socials">
         <a class="facebook" href="javascript:void(0)"  
-            onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcloudflare-ssh', 'facebook-share', 'width=580,height=296');return false;"
+            onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fcloudflare-ssh%2F', 'facebook-share', 'width=580,height=296');return false;"
             title="Share on Facebook" aria-label="Share on Facebook" >
         <i class="fab fa-facebook-f"></i>
         </a>
         <a class="twitter" href="javascript:void(0)"  
-            onClick="window.open('https://twitter.com/intent/tweet?text=I%26%2339%3Bve%20been%20using%20Cloudflare%20for%20a%20number%20of%20years%20to%20manage%20DNS%20settings%20for%20the%20various%20websites%20I%20look%20after.%20It%26%2339%3Bs%20handy%20having%20all%20your%20DNS%20stuff%20in%20t...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcloudflare-ssh', 'twitter-share', 'width=550,height=235');return false;" 
+            onClick="window.open('https://twitter.com/intent/tweet?text=I%26%2339%3Bve%20been%20using%20Cloudflare%20for%20a%20number%20of%20years%20to%20manage%20DNS%20settings%20for%20the%20various%20websites%20I%20look%20after.%20It%26%2339%3Bs%20handy%20having%20all%20your%20DNS%20stuff%20in%20t...&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fcloudflare-ssh%2F', 'twitter-share', 'width=550,height=235');return false;" 
             title="Share on Twitter" target="_blank" aria-label="Share on Twitter">
         <i class="fab fa-twitter"></i>
         </a>
-        <a class="google-plus" href="javascript:void(0)"  
-            onClick="window.open('https://plus.google.com/share?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcloudflare-ssh', 'google-plus-share', 'width=490,height=530');return false;"
-            title="Share on Google+" target="_blank" aria-label="Share on Google+">
-        <i class="fab fa-google"></i>
+        <a class="whatsapp" href="javascript:void(0)" 
+            onClick="window.open('https://wa.me/?text=Using%20Cloudflare%20for%20HTTPS https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fcloudflare-ssh%2F', 'whatsapp-share', 'width=490,height=530');return false;" 
+            title="Share on WhatsApp" target="_blank" aria-label="Share on WhatsApp"> 
+         <i class="fab fa-whatsapp"></i>  
         </a>
         <a class="pinterest" href="javascript:void(0)"  
-            onClick="window.open('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fblog%2Fpost%2Fcloudflare-ssh&#38;media=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fimg%2Fcloudflare-universal-ssl.jpg', 'pinterest-share', 'width=490,height=530');return false;"
+            onClick="window.open('https://pinterest.com/pin/create/bookmarklet/?media=https%3A%2F%2Fwww.stevemcarthur.co.uk%2Fimg%2Fcloudflare-universal-ssl.jpg&#38;url=https%3A%2F%2Fwww.stevemcarthur.co.ukblog%2Fpost%2Fcloudflare-ssh%2F&#38;description=Using%20Cloudflare%20for%20HTTPS', 'pinterest-share', 'width=490,height=530');return false;"
             title="Share on Pinterest" target="_blank" aria-label="Share on Pinterest">
         <i class="fab fa-pinterest"></i>
         </a>
@@ -274,7 +249,6 @@
   <script src="/js/scripts.js"></script>
   <script src="/js/prism-custom.min.js"></script>
 
-  
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
     <script>
@@ -293,7 +267,16 @@
                 }
             });
         });
-    </script>  </body>
+    </script>
+    <style>
+    .cc-window.cc-banner, .cc-window {
+        width: 98% !important;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    
+    </style>
+</body>
 
 </html>
 

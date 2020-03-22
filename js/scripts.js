@@ -10,7 +10,7 @@ $(function () {
     var isFixed = false;
     var isVis = false;
     $(window).on("scroll", function () {
-        if (!isFixed && this.scrollY > 100) {
+        if (!isFixed && this.scrollY > 70) {
             /*   nav.hide();
               nav.addClass("fixed-top");
               //socials.addClass("dark");
@@ -18,7 +18,7 @@ $(function () {
             //nav.animate({backgroundColor: "#fff"}, 'slow');
             nav.addClass("bg-white");
             isFixed = true;
-        } else if (isFixed && this.scrollY < 100) {
+        } else if (isFixed && this.scrollY < 70) {
             isFixed = false;
             nav.removeClass("bg-white");
             //nav.animate({backgroundColor: "transparent"}, 'slow');
