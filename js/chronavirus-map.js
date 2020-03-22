@@ -115,11 +115,7 @@ $(function () {
     let cumulativeUS = 0;
     function addToCountryList(item,geo) {
         if(geo){
-            if(item.country == "US"){
-                console.log(item.province+", "+item.country+": "+item.deaths);
-                cumulativeUS = cumulativeUS + parseInt(item.deaths);
-                console.log(cumulativeUS);
-            }
+
             if(countryList[item.country]){
                 countryList[item.country].confirmed = countryList[item.country].confirmed + item.confirmed;
                 countryList[item.country].deaths = countryList[item.country].deaths + item.deaths;
@@ -160,7 +156,7 @@ $(function () {
                     //console.log(geo);
                 }
             } else {
-                console.log("Missing: " + address);
+                //console.log("Missing: " + address);
             }
         }
         txt = "All United States<br>Deaths: " + countryList.US.deaths;
