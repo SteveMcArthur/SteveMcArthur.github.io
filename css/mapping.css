@@ -4,6 +4,24 @@
   width: 100%;
   height: 400px;
   margin-bottom: 10px;
+  overflow-y: auto;
+}
+.map-container .alert {
+  position: absolute;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.map-container .alert .row {
+  margin-left: -5px;
+}
+.map-container .alert h5 {
+  margin: 0;
+  padding-right: 1rem;
+}
+.map-container .alert span {
+  margin-left: 0;
+  padding-left: 0;
 }
 #map {
   position: absolute;
@@ -11,4 +29,14 @@
   left: 0;
   bottom: 0;
   right: 0;
+}
+@media (min-width: 768px) {
+  .map-container .alert {
+    position: absolute;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    margin: auto;
+    margin-left: 0px;
+  }
 }
