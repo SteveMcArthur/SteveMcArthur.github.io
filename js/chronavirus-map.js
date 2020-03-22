@@ -130,13 +130,13 @@ $(function () {
                     deaths: parseInt(item.deaths),
                     recovered: parseInt(item.recovered),
                     lat: geo.lat,
-                    lon: geo.lng
+                    lng: geo.lng
                 }
             }
         }
 
     }
-
+    let txt = "";
     //call the service
     $.ajax(url, opts).done(function (data, status) {
         stats = data.data.covid19Stats;
@@ -149,8 +149,8 @@ $(function () {
             addToCountryList(item,geo);
             if (geo) {
                 if (geo.geometry && geo.geometry.lat) {
-                    if(item.deaths > 0){
-                        let txt = geo.formatted + "<br>Deaths: " + item.deaths;
+                    if(item.deaths > 0 ){
+                        txt = geo.formatted + "<br>Deaths: " + item.deaths;
                         let circle = getCircle(item.deaths);
                         L.circleMarker([geo.geometry.lat, geo.geometry.lng], circle)
                             .bindPopup(txt).addTo(map);
@@ -163,6 +163,10 @@ $(function () {
                 console.log("Missing: " + address);
             }
         }
+        txt = "All United States<br>Deaths: " + countryList.US.deaths;
+        let circle = getCircle(countryList.US.deaths);
+        L.circleMarker([37.0902, -95.7129], circle)
+            .bindPopup(txt).addTo(map);
         var content = "<div class='row'><h5>Deaths..</h5><div> {{content}}</div></div>"
         var tpl = "<span class='col-md-2'>{{country}}: {{deaths}},</span>   ";
         var txt = tpl.replace("{{country}}","USA").replace("{{deaths}}",countryList.US.deaths);
