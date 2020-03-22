@@ -184,6 +184,20 @@ $.ajax(url,opts).done(function (data, status) {
     //do something with the returned data
 });
 </code></pre>
+<p>In PHP it would be something like this:</p>
+<pre><code class="lang-php">$curl_h = curl_init(&quot;https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats&quot;);
+
+curl_setopt($curl_h, CURLOPT_HTTPHEADER,
+    array(
+        &quot;x-rapidapi-host: covid-19-coronavirus-statistics.p.rapidapi.com&quot;,
+        &quot;x-rapidapi-key: YOUR-API-KEY&quot;
+    )
+);
+
+curl_setopt($curl_h, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($curl_h);
+</code></pre>
 <h2 id="geocoding-opencage">Geocoding: OpenCage</h2>
 <p><img src="/img/opencage.jpg" alt="OpenCage Geocode"></p>
 <p>Geocoding is the assigning of the coordinates to some sort of address. The data from WHO and RapidAPI gives the number of deaths and confirmed cases of coronavirus at the country and province level. The country and province data is text. To get that on a map we need the coordinates: the lats and longs.</p>
