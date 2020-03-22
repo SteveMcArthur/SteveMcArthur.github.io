@@ -90,13 +90,12 @@ $(function () {
     let map = L.map('map').setView([20, 13], 2);
     L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
-        zoomControl: false
+        zoomControl: false,
+        scrollWheelZoom: false
     }).addTo(map);
     map.zoomControl.remove();
+    map.scrollWheelZoom.disable();
 
-    L.control.zoom({
-        position: 'topright'
-    }).addTo(map);
 
     //headers we need to pass to rapidapi
     let opts = {
