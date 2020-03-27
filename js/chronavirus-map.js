@@ -113,22 +113,27 @@ $(function () {
     let countryList = {};
     let cumulativeUS = 0;
     function addToCountryList(item,geo) {
-        if(geo){
-
+ 
             if(countryList[item.country]){
                 countryList[item.country].confirmed = countryList[item.country].confirmed + item.confirmed;
                 countryList[item.country].deaths = countryList[item.country].deaths + item.deaths;
                 countryList[item.country].recovered = countryList[item.country].recovered + item.recovered;
+                if(geo){
+                    if(!countryList[item.country].lat || countryList[item.country].lat == 0 ){
+                        countryList[item.country].lat = geo.lat;
+                        countryList[item.country].lng = geo.lng;
+                    }
+                }
             }else {
                 countryList[item.country] = {
                     confirmed: parseInt(item.confirmed),
                     deaths: parseInt(item.deaths),
                     recovered: parseInt(item.recovered),
-                    lat: geo.lat,
-                    lng: geo.lng
+                    lat: geo ? geo.lat : 0,
+                    lng: geo ? geo.lng : 0
                 }
             }
-        }
+        
 
     }
     let txt = "";

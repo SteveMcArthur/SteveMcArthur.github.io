@@ -151,7 +151,7 @@ L.tileLayer(&#39;https://{s}.tile.osm.org/{z}/{x}/{y}.png&#39;, {
 <p>To put some sort of marker on the map indicating where a coronavirus outbreak has occurred we need two sources. One for the virus data and one for the coordinate data.</p>
 <h2 id="virus-data-source-rapidapi">Virus Data Source: RapidAPI</h2>
 <p><img src="/img/rapidapi.jpg" alt="Rapid API"></p>
-<p>This is what I used for the virus data. Whilst the <a href="https://www.who.int/">WHO</a> does have some sort of data feed, I thought it simpler to just go to <a href="https://rapidapi.com/">RapidAPI</a>. The source of their data does come from WHO, I just thought it would be easier to set up.</p>
+<p>This is what I used for the virus data. Whilst the <a href="https://www.who.int/">WHO</a> does have some sort of data feed, I couldn&#39;t find a Coronavirus feed. So I thought it simpler to just go to <a href="https://rapidapi.com/">RapidAPI</a>. The source of their data comes from the John Hopkins University, in particular their GitHub repository at <a href="https://github.com/CSSEGISandData/COVID-19">https://github.com/CSSEGISandData/COVID-19</a>.</p>
 <p>Once you sign up for an API key at <a href="https://rapidapi.com/">https://rapidapi.com/</a>, you just make a call to the API url and it returns the data in the following format: </p>
 <pre><code class="lang-json">{
 &quot;error&quot;: false,
