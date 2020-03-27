@@ -110,7 +110,29 @@ $(function () {
 
 
     let stats = [];
-    let countryList = {};
+    let countryList = {
+        "US": {
+            lat: 37.0902,
+            lng: -95.7129,
+            confirmed: 0,
+            deaths: 0,
+            recovered: 0
+        },
+        "United Kingdom": {
+            lat: 55.3781,
+            lng: -3.4360,
+            confirmed: 0,
+            deaths: 0,
+            recovered: 0
+        },
+        "France": {
+            lat: 46.2276,
+            lng: 2.2137,
+            confirmed: 0,
+            deaths: 0,
+            recovered: 0
+        },
+    };
     let cumulativeUS = 0;
     function addToCountryList(item,geo) {
  
@@ -146,6 +168,16 @@ $(function () {
             let item = stats[i];
             let address = item.province + "," + item.country;
             let geo = geocodedAddresses[address];
+            if(!geo){
+                if(countryList[item.country]){
+                    geo = {
+                        geometry: {
+                            lat: countryList[item.country].lat,
+                            lng: countryList[item.country].lng,
+                        }
+                    }
+                }
+            }
             addToCountryList(item,geo);
             if (geo) {
                 if (geo.geometry && geo.geometry.lat) {
@@ -165,8 +197,13 @@ $(function () {
         }
         txt = "All United States<br>Deaths: " + countryList.US.deaths;
         let circle = getCircle(countryList.US.deaths);
-        L.circleMarker([37.0902, -95.7129], circle)
+        L.circleMarker([countryList.US.lat, countryList.US.lng], circle)
             .bindPopup(txt).addTo(map);
+
+            txt = "All UK<br>Deaths: " + countryList["United Kingdom"].deaths;
+            circle = getCircle(countryList["United Kingdom"].deaths);
+            L.circleMarker([countryList["United Kingdom"].lat, countryList["United Kingdom"].lng], circle)
+                .bindPopup(txt).addTo(map);
         var content = "<div class='row'><h5>Deaths..</h5><div> {{content}}</div></div>"
         var tpl = "<span class='col-md-2'>{{country}}: {{deaths}},</span>   ";
         var txt = tpl.replace("{{country}}","USA").replace("{{deaths}}",countryList.US.deaths);
@@ -179,6 +216,7 @@ $(function () {
         txt = txt + tpl.replace("{{country}}","Australia").replace("{{deaths}}",countryList["Australia"].deaths);
         txt = content.replace("{{content}}",txt);
         $(".map-container .alert").html(txt);
+
     });
 
 
