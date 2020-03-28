@@ -132,6 +132,41 @@ $(function () {
             deaths: 0,
             recovered: 0
         },
+        "China": {
+            lat: 35.8617,
+            lng: 104.1954,
+            confirmed: 0,
+            deaths: 0,
+            recovered: 0
+        },
+        "Germany": {
+            lat: 35.8617,
+            lng: 104.1954,
+            confirmed: 0,
+            deaths: 0,
+            recovered: 0
+        },
+        "Spain": {
+            lat: 40.4637,
+            lng: 3.7492,
+            confirmed: 0,
+            deaths: 0,
+            recovered: 0
+        },
+        "Italy": {
+            lat: 41.8719,
+            lng: 12.5674,
+            confirmed: 0,
+            deaths: 0,
+            recovered: 0
+        },
+        "Iran": {
+            lat: 41.8719,
+            lng: 12.5674,
+            confirmed: 0,
+            deaths: 0,
+            recovered: 0
+        }
     };
     let cumulativeUS = 0;
     function addToCountryList(item,geo) {
