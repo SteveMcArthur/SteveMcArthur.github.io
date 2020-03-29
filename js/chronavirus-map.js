@@ -11,29 +11,47 @@ $(function () {
         },
         101: { //less than 101
             radius: 5,
-            color: 'blue',
-            fillColor: '#009dff',
-            fillOpacity: 0.5
+            color: 'green',
+            fillColor: '#00ff22',
+            fillOpacity: 1
         },
         201: {
-            radius: 10,
+            radius: 5,
             color: 'blue',
             fillColor: '#009dff',
             fillOpacity: 0.5
         },
         501: {
             radius: 10,
+            color: 'blue',
+            fillColor: '#009dff',
+            fillOpacity: 1
+        },
+        1001: {
+            radius: 5,
             color: 'magenta',
             fillColor: '#FF00FF',
             fillOpacity: 0.5
         },
-        1001: {
+        2501: {
+            radius: 5,
+            color: 'magenta',
+            fillColor: '#FF00FF',
+            fillOpacity: 1
+        },
+        5001: {
+            radius: 5,
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5
+        },
+        10001: {
             radius: 10,
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5
         },
-        1000000: {
+        20001: {
             radius: 15,
             color: 'red',
             fillColor: '#f03',
@@ -217,7 +235,8 @@ $(function () {
             if (geo) {
                 if (geo.geometry && geo.geometry.lat) {
                     if(item.deaths > 0 ){
-                        txt = geo.formatted + "<br>Deaths: " + item.deaths;
+                        let loc = geo.formatted || item.keyId;
+                        txt = loc + "<br>Deaths: " + item.deaths;
                         let circle = getCircle(item.deaths);
                         L.circleMarker([geo.geometry.lat, geo.geometry.lng], circle)
                             .bindPopup(txt).addTo(map);
