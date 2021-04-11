@@ -32,7 +32,8 @@ $(function() {
             var emailData = {
                 email: email,
                 name: name,
-                message: message
+                message: message,
+                form_api_token: "wzx70479xl1q"
             }
 
             $.ajax({
