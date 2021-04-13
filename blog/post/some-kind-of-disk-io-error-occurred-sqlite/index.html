@@ -75,6 +75,11 @@
           </a>
           
         </li>
+                       <li class="nav-item">
+                  <a class="nav-link" href="https://simplecartjs.stevemcarthur.co.uk/">SimpleCart Docs          <hr>
+          </a>
+          
+        </li>
               <li class="nav-item sc">
           <a class="nav-link"  href="https://twitter.com/stevemcarthur" title="Go to my Twitter account" aria-label="Go to my Twitter account">
             <i class="fab fa-twitter"></i>
@@ -116,10 +121,10 @@
       <div class="container">
           <div class="row">
             <div class="col-12">
-            <div class="post-img">
+                        <div class="post-img">
                 <img class="img-fluid" src="/img/SQLite2.png" alt="SQLite2">
             </div>
-            <div class="post-holder">
+                        <div class="post-holder">
               <article class="post-content blog-post">
                   <p>I got the extremely helpful &quot;Some kind of disk I/O error occurred&quot; message using the System.Data.SQLite .net assembly today. This was a big SQLite show stopper. So I thought it was about time I figured out what was causing this. The error was occurring when I tried to post an update to the SQLite database in the local App_Data folder of an asp.net application. As soon as the application attempted to post the update I got the dreaded &quot;Some kind of..&quot; error and a SQLite journal file was created in the database folder. After this, the database became unavailable. It became available again once the journal file was deleted, but I was then back in the same situation once another update was attempted. The curious thing was that this behaviour didn&#39;t occur in the development environment, only when uploaded to the live server. My first thought was that the application for some reason didn&#39;t have rights to write to the App_Data folder. But the journal file was writing to the location with no troubles. Finally I hit upon a forum post on the System.Data.SQLite forum. This pointed in the direction of using the statement to set the journal_mode value to something other than &quot;DELETE&quot;. The PRAGMA statement is executed exactly like a query, so all that needs to be done is to execute the statement using a SQLiteCommand object in the same way you would execute any other SQL statement.</p>
 <pre data-type="code" class="js">using(SQLiteConnection conn = new SQLiteConnection(sqliteConnectionString)) {
@@ -200,7 +205,7 @@
     </div>
 </div>                                   </div>
                 <div class="m-0 sm">
-                <span class="copyright">Copyright &copy; Steve McArthur 2021</span><span> <a class="tc" href="/terms-and-conditions/">Terms and Conditions</a> </span><span><a href="/privacy-policy/">Privacy</a></span>             
+                <span class="copyright">Copyright &copy; Steve McArthur 2021</span><span> <a class="tc" href="/terms-and-conditions/">Terms and Conditions</a> </span><span><a href="/privacy/">Privacy Policy</a></span>             
                 </div>
 
                    

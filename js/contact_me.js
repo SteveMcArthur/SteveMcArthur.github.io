@@ -56,7 +56,7 @@ $(function() {
                     $("#contactForm").trigger("reset");
                     $("#success").addClass("show");
                 },
-                fail: function() {
+                error: function() {
                     // Fail message
                     $("#success").html("<div class='alert alert-danger'>");
                     $("#success > .alert-danger").html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
