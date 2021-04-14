@@ -324,7 +324,7 @@ $.getJSON(&quot;/js/geocoded-addresses.json&quot;, function (data, status) {
         //add the data to a dictionary style object
         //so that it is easy to look up each address
         geocodedAddresses[item.address] = {
-            formatted: item.formatted, // just a nicer looking address - incase we want it
+            formatted: item.formatted, // just a nicer looking address - in case we want it
             geometry: item.geometry// lats &amp; longs
         }
     })
