@@ -1,8 +1,6 @@
 /*global $*/
 // Contact Form Scripts
 $(function() {
-    var bvURL = "https://email-webservice.herokuapp.com/";
-    $.ajax(bvURL);
 
     $("body").on("input propertychange", ".floating-label-form-group", function(e) {
         $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
@@ -25,22 +23,16 @@ $(function() {
             var phone = $("input#phone").val();
             var message = $("textarea#message").val();
 
-            //var emailURL = "https://getsimpleform.com/messages/ajax?form_api_token=74603f5b7f9af3a58f61049a60b94ded";
-            var emailURL = "https://email-webservice.herokuapp.com/email/addemail";
-            var requestType = "POST";
-
-            var emailData = {
-                email: email,
-                name: name,
-                message: message,
-                form_api_token: "wzx70479xl1q"
-            }
-
             $.ajax({
-                url: emailURL,
-                type: requestType,
-                //dataType: "jsonp",
-                data: emailData,
+                url: "https://getsimpleform.com/messages/ajax?form_api_token=74603f5b7f9af3a58f61049a60b94ded",
+                dataType: "jsonp",
+                data: {
+                    "Title": name+" sent you an enquiry via stevemcarthur.co.uk",
+                    "Name": name,
+                    "Phone": phone,
+                    "Email": email,
+                    "Details": message
+                },
                 cache: false,
                 success: function() {
                     // Success message
@@ -61,7 +53,7 @@ $(function() {
                     $("#success").html("<div class='alert alert-danger'>");
                     $("#success > .alert-danger").html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $("#success > .alert-danger").append("<strong>Sorry " + name + ", it seems that my mail server is not responding. Please try again later!");
+                    $("#success > .alert-danger").append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
                     $("#success > .alert-danger").append("</div>");
                     //clear all fields
                     $("#contactForm").trigger("reset");
