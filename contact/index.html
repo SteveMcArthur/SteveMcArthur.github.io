@@ -39,7 +39,6 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,600,700|Montserrat+Alternates:400,700" rel="stylesheet">
     <link href="/font-awesome/css/all.css" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
-    <link href="/css/contact.css" rel="stylesheet">
 </head>
 <body class="contact">
   <!-- Navigation -->
@@ -199,7 +198,17 @@
         <span class="arrow">&gt;</span>
         </button>
     </div>
-    <div id="success"></div>
+    <div id="success" class="d-none">
+        <div class='alert alert-success'>
+        <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+        <strong>Your message has been sent. </strong>
+    </div>
+    <div id="failed" class="d-none">
+        <div class='alert alert-danger'>
+        <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+        <strong>Sorry <span id="contact-name"></span>, it seems that my mail server is not responding. Please try again later!</strong>
+    </div>
+    </div>
 </form>                  </div>
                 </div>
             </div>
