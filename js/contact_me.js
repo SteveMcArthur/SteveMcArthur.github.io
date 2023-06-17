@@ -9,6 +9,13 @@ $(function() {
     }).on("blur", ".floating-label-form-group", function() {
         $(this).removeClass("floating-label-form-group-with-focus");
     });
+
+    var justHidden = false;
+    $("[data-hide]").on("click", function(event){
+        $("#" + $(this).attr("data-hide")).hide();
+        justHidden = true;
+        event.stopPropagation();
+    })
     
     $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
         preventSubmit: true,
@@ -24,7 +31,7 @@ $(function() {
             var message = $("textarea#message").val();
 
             $.ajax({
-                url: "https://getsimpleform.com/messages/ajax?form_api_token=74603f5b7f9af3a58f61049a60b94ded",
+                url: "https://designerhart.co.uk/email?form_api_token=74603f5b7f9af3a58f61049a60b94ded",
                 dataType: "jsonp",
                 data: {
                     "Title": name+" sent you an enquiry via stevemcarthur.co.uk",
@@ -36,7 +43,10 @@ $(function() {
                 cache: false,
                 success: function() {
                     // Success message
-                    $("#success").removeClass("d-none");
+                    if(!justHidden){
+                        $('#success').show();
+                    }
+                    justHidden = false
                     //clear all fields
                     $("#contactForm").trigger("reset");
           
@@ -44,9 +54,12 @@ $(function() {
                 error: function() {
                     // Fail message
                     $("#failed > span").text(name);
-                    $("#failed").removeClass("d-none");
+                    if(!justHidden){
+                        $('#failed').show();
+                    }
+                    justHidden = false;
                     //clear all fields
-                    $("#contactForm").trigger("reset");
+                    //$("#contactForm").trigger("reset");
          
                 },
             });
@@ -65,5 +78,5 @@ $(function() {
 
 /*When clicking on Full hide fail/success boxes */
 $("#name").focus(function() {
-    $("#success").html("").removeClass("show");
+    $("#success,#failed").hide();
 });
