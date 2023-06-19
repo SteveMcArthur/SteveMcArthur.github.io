@@ -48,7 +48,7 @@ $(function() {
                 },
                 cache: false,
                 complete: function(){
-                    $(this).attr("disabled",true);
+                   
                 },
                 success: function() {
                     // Success message
@@ -70,7 +70,7 @@ $(function() {
                     justHidden = false;
                     //clear all fields
                     //$("#contactForm").trigger("reset");
-                    $("#sendMessageButton").removeAttr("disabled");
+                    //$("#sendMessageButton").removeAttr("disabled");
          
                 },
             });
