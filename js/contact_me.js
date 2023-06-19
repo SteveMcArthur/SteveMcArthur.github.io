@@ -16,14 +16,14 @@ $(function() {
         justHidden = true;
         event.stopPropagation();
     });
-    $("#sendMessageButton").on("click", function(event){
-        $(this).addClass("disabled");
-    });
+/*     $("#sendMessageButton").on("click", function(event){
+        $(this).attr("disabled",true);
+    }); */
     
     $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
-            // additional error messages or events
+            alert("submit error");
         },
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
@@ -35,17 +35,21 @@ $(function() {
 
             $.ajax({
                 type: 'POST',
-                url: "https://email-webservice.onrender.com/email/addemail",
+                //url: "https://email-webservice.onrender.com/email/addemail",
+                url: "http://localhost:3000/email/addemail",
                 dataType: "JSON",
                 data: {
-                    "Title": name+" sent you an enquiry via stevemcarthur.co.uk",
-                    "Name": name,
-                    "Phone": phone,
-                    "Email": email,
-                    "Details": message,
+                    "subject": name+" sent you an enquiry via stevemcarthur.co.uk",
+                    "name": name,
+                    "phone": phone,
+                    "email": email,
+                    "message": message,
                     'form_api_token':'wzx70479xl1q'
                 },
                 cache: false,
+                complete: function(){
+                    $(this).attr("disabled",true);
+                },
                 success: function() {
                     // Success message
                     if(!justHidden){
@@ -66,7 +70,7 @@ $(function() {
                     justHidden = false;
                     //clear all fields
                     //$("#contactForm").trigger("reset");
-                    $("#sendMessageButton").removeClass("disabled");
+                    $("#sendMessageButton").removeAttr("disabled");
          
                 },
             });
