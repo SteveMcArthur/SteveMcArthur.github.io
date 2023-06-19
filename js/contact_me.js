@@ -31,8 +31,9 @@ $(function() {
             var message = $("textarea#message").val();
 
             $.ajax({
+                type: 'POST',
                 url: "https://email-webservice.onrender.com/email/addemail",
-                dataType: "jsonp",
+                dataType: "JSON",
                 data: {
                     "Title": name+" sent you an enquiry via stevemcarthur.co.uk",
                     "Name": name,
