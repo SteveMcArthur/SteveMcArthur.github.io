@@ -15,7 +15,10 @@ $(function() {
         $("#" + $(this).attr("data-hide")).hide();
         justHidden = true;
         event.stopPropagation();
-    })
+    });
+    $("#sendMessageButton").on("click", function(event){
+        $(this).addClass("disabled");
+    });
     
     $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
         preventSubmit: true,
@@ -51,6 +54,7 @@ $(function() {
                     justHidden = false
                     //clear all fields
                     $("#contactForm").trigger("reset");
+                    $("#sendMessageButton").removeClass("disabled");
           
                 },
                 error: function() {
@@ -62,6 +66,7 @@ $(function() {
                     justHidden = false;
                     //clear all fields
                     //$("#contactForm").trigger("reset");
+                    $("#sendMessageButton").removeClass("disabled");
          
                 },
             });
