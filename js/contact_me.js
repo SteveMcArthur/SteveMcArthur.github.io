@@ -1,6 +1,10 @@
 /*global $*/
 // Contact Form Scripts
 $(function() {
+    $.ajax({//wakeup service
+        type: 'GET',
+        url: "https://email-webservice.onrender.com/"
+    });
 
     $("body").on("input propertychange", ".floating-label-form-group", function(e) {
         $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
@@ -52,13 +56,14 @@ $(function() {
                 },
                 success: function() {
                     // Success message
+                    
+                    //clear all fields
+                    $("#contactForm").trigger("reset");
+                    $("#sendMessageButton").removeClass("disabled");
                     if(!justHidden){
                         $('#success').show();
                     }
                     justHidden = false
-                    //clear all fields
-                    $("#contactForm").trigger("reset");
-                    $("#sendMessageButton").removeClass("disabled");
           
                 },
                 error: function() {
@@ -88,6 +93,6 @@ $(function() {
 
 
 /*When clicking on Full hide fail/success boxes */
-$("#name").focus(function() {
+$("#name").click(function() {
     $("#success,#failed").hide();
 });
